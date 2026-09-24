@@ -2,11 +2,29 @@
 // منصة الأستاذ محمد الصياد — أستاذ الفيزياء — Physics Platform — Data
 // ═══════════════════════════════════════════════════════════════
 
+
+// ── Display labels (values stored in the database stay unchanged) ──
+const GOV_AR = {'Cairo':'القاهرة','Giza':'الجيزة','Alexandria':'الإسكندرية','Dakahlia':'الدقهلية','Beheira':'البحيرة','Fayoum':'الفيوم','Gharbia':'الغربية','Ismailia':'الإسماعيلية','Monufia':'المنوفية','Menofia':'المنوفية','Minya':'المنيا','Qalyubia':'القليوبية','New Valley':'الوادي الجديد','Suez':'السويس','Aswan':'أسوان','Asyut':'أسيوط','Assiut':'أسيوط','Beni Suef':'بني سويف','Port Said':'بورسعيد','Damietta':'دمياط','Sharkia':'الشرقية','Sharqia':'الشرقية','South Sinai':'جنوب سيناء','Kafr El Sheikh':'كفر الشيخ','Matrouh':'مطروح','Luxor':'الأقصر','Qena':'قنا','North Sinai':'شمال سيناء','Sohag':'سوهاج','Red Sea':'البحر الأحمر'};
+const GRADE_AR = {'1st Year Preparatory':'الصف الأول الإعدادي','2nd Year Preparatory':'الصف الثاني الإعدادي','3rd Year Preparatory':'الصف الثالث الإعدادي','1st Year Secondary':'الصف الأول الثانوي','2nd Year Secondary':'الصف الثاني الثانوي','2nd Year Secondary — General':'الصف الثاني الثانوي — عام','2nd Year Secondary — Baccalaureate':'الصف الثاني الثانوي — بكالوريا','2nd Year Secondary — Programming':'الصف الثاني الثانوي — برمجة','Baccalaureate Programming':'بكالوريا برمجة','3rd Year Secondary':'الصف الثالث الثانوي'};
+
+// ── Auth icon family (outline, 1.8 stroke) ──
+const _au = (p, s) => `<svg viewBox="0 0 24 24" width="${s || 20}" height="${s || 20}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`;
+const AUTH_ICONS = {
+    user: _au('<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>'),
+    phone: _au('<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>'),
+    lock: _au('<rect x="4" y="11" width="16" height="10" rx="3"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>'),
+    eye: _au('<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>'),
+    eyeOff: _au('<path d="M3 3l18 18"/><path d="M6.5 6.8A16.6 16.6 0 0 0 2 12s3.6 7 10 7c1.5 0 2.9-.3 4.1-.8M10.6 5.1A9.6 9.6 0 0 1 12 5c6.4 0 10 7 10 7a17 17 0 0 1-3.2 4.1"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/>'),
+    cap: _au('<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/>'),
+    pin: _au('<path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>'),
+    check: _au('<path d="M5 12.5l4.5 4.5L19 7.5"/>', 16)
+};
+const AUTH_ORBITS = `<svg class="auth-orbits" viewBox="0 0 800 800" fill="none" stroke="currentColor" aria-hidden="true"><g class="hb-o-spin hb-o-a"><g transform="rotate(24 400 400)"><ellipse cx="400" cy="400" rx="390" ry="148" stroke-width="1.2"/><circle cx="790" cy="400" r="5" class="hb-cy" stroke="none"/></g></g><g class="hb-o-spin hb-o-b"><g transform="rotate(-38 400 400)"><ellipse cx="400" cy="400" rx="330" ry="116" stroke-width="1.1"/><circle cx="70" cy="400" r="4" fill="currentColor" stroke="none"/></g></g><circle cx="400" cy="400" r="160" stroke-width=".9"/><circle cx="400" cy="400" r="250" stroke-width=".8" stroke-dasharray="2 9"/><path d="M400 20V780M20 400H780" stroke-width=".5" opacity=".5"/><g stroke="none"><circle class="hb-p hb-cy" cx="150" cy="200" r="2.4"/><circle class="hb-p" cx="650" cy="150" r="2" fill="currentColor"/><circle class="hb-p hb-cy" cx="700" cy="580" r="2.2"/><circle class="hb-p" cx="210" cy="670" r="2" fill="currentColor"/></g></svg>`;
 const SITE_CONFIG = {
     name: 'منصة الأستاذ محمد الصياد',
     fullName: 'منصة الأستاذ محمد الصياد — أستاذ الفيزياء',
     subtitle: 'أستاذ الفيزياء',
-    description: 'The premier educational platform for Physics with الأستاذ محمد الصياد, أستاذ الفيزياء — clear explanations, interactive exercises, and comprehensive exams for all grade levels.',
+    description: 'المنصة التعليمية الأولى لمادة الفيزياء مع الأستاذ محمد الصياد، أستاذ الفيزياء — شروحات واضحة وتمارين تفاعلية واختبارات شاملة لجميع المراحل الدراسية.',
     teacher: 'الأستاذ محمد الصياد',
     year: 2026,
 };
@@ -34,36 +52,36 @@ function physicsLogoMark(uid, cls, variant) {
 }
 
 const QUIZ_DATA = {
-    title: 'Unit 1 Exam — Mechanics',
+    title: 'اختبار الوحدة الأولى — الميكانيكا',
     questions: [
         {
             id: 'q1',
-            text: 'What is the SI unit of force ?',
-            options: ['Joule', 'Newton', 'Watt', 'Pascal'],
+            text: 'ما وحدة القوة في النظام الدولي؟',
+            options: ['جول', 'نيوتن', 'واط', 'باسكال'],
             correct: 1
         },
         {
             id: 'q2',
-            text: 'A car accelerates uniformly from rest at 3 m/s². What is its speed after 4 s ?',
+            text: 'تتسارع سيارة من السكون بانتظام بعجلة 3 م/ث². ما سرعتها بعد 4 ث؟',
             options: ['7 m/s', '9 m/s', '12 m/s', '16 m/s'],
             correct: 2
         },
         {
             id: 'q3',
-            text: 'Which law of motion is expressed by the equation F = ma ?',
-            options: ['Newton\'s first law', 'Newton\'s second law', 'Newton\'s third law', 'Law of universal gravitation'],
+            text: 'أي قانون للحركة تعبّر عنه المعادلة F = ma؟',
+            options: ['قانون نيوتن الأول', 'قانون نيوتن الثاني', 'قانون نيوتن الثالث', 'قانون الجذب العام'],
             correct: 1
         },
         {
             id: 'q4',
-            text: 'A resistor of 4 Ω is connected to a 12 V source. What is the current through it ?',
+            text: 'مقاومة 4 Ω موصولة بمصدر جهده 12 V. ما شدة التيار المار فيها؟',
             options: ['3 A', '8 A', '16 A', '48 A'],
             correct: 0
         },
         {
             id: 'q5',
-            text: 'Which of the following quantities is a vector ?',
-            options: ['Speed', 'Mass', 'Velocity', 'Energy'],
+            text: 'أي من الكميات التالية كمية متجهة؟',
+            options: ['السرعة القياسية', 'الكتلة', 'السرعة المتجهة', 'الطاقة'],
             correct: 2
         }
     ]
@@ -71,84 +89,84 @@ const QUIZ_DATA = {
 
 const TESTIMONIALS_DATA = [
     {
-        name: 'Ahmed Mohamed',
+        name: 'أحمد محمد',
         initials: 'AM',
-        text: 'The explanations are clear and easy to understand. The exams help me truly gauge my level. I got the highest score in Physics thanks to this platform.',
+        text: 'الشرح واضح وسهل الفهم، والاختبارات تساعدني على قياس مستواي بدقة. حصلت على أعلى درجة في الفيزياء بفضل هذه المنصة.',
         rating: 5,
-        grade: '3rd Year Secondary'
+        grade: 'الصف الثالث الثانوي'
     },
     {
-        name: 'Fatma Ali',
+        name: 'فاطمة علي',
         initials: 'FA',
-        text: 'This platform completely changed my view of Physics. I used to hate the subject, and now it\'s one of my favourites!',
+        text: 'هذه المنصة غيّرت نظرتي للفيزياء تمامًا. كنت أكره المادة والآن أصبحت من موادي المفضلة!',
         rating: 5,
-        grade: '1st Year Secondary'
+        grade: 'الصف الأول الثانوي'
     },
     {
-        name: 'Omar Hassan',
+        name: 'عمر حسن',
         initials: 'OH',
-        text: 'The teacher\'s approach is excellent — step-by-step explanations. The summaries and PDF notes are very helpful during revision.',
+        text: 'أسلوب الأستاذ ممتاز — شرح خطوة بخطوة. الملخصات وملازم PDF مفيدة جدًا وقت المراجعة.',
         rating: 5,
-        grade: '2nd Year Secondary'
+        grade: 'الصف الثاني الثانوي'
     },
     {
-        name: 'Nour Eldin',
+        name: 'نور الدين',
         initials: 'NE',
-        text: 'The platform is easy to use and the courses are very well organised. I recommend it to every student.',
+        text: 'المنصة سهلة الاستخدام والكورسات منظّمة جدًا. أنصح بها كل طالب.',
         rating: 4,
-        grade: '3rd Year Preparatory'
+        grade: 'الصف الثالث الإعدادي'
     },
     {
-        name: 'Yasmine Khaled',
+        name: 'ياسمين خالد',
         initials: 'YK',
-        text: 'The best physics platform I have used. The interactive exams are outstanding and prepare me well for actual exams.',
+        text: 'أفضل منصة فيزياء استخدمتها. الاختبارات التفاعلية رائعة وتجهّزني جيدًا للامتحانات الفعلية.',
         rating: 5,
-        grade: '3rd Year Secondary'
+        grade: 'الصف الثالث الثانوي'
     },
     {
-        name: 'Karim Saeed',
+        name: 'كريم سعيد',
         initials: 'KS',
-        text: 'The explanations are clear and the exercises are progressive. I noticed a significant improvement in my level in just one month.',
+        text: 'الشرح واضح والتمارين متدرّجة. لاحظت تحسنًا كبيرًا في مستواي خلال شهر واحد فقط.',
         rating: 5,
-        grade: '1st Year Secondary'
+        grade: 'الصف الأول الثانوي'
     }
 ];
 
 const FEATURES_DATA = [
     {
         icon: '💡',
-        title: 'Conceptual & Simplified Explanations',
-        description: 'Step-by-step explanations from the fundamentals, clarifying physical concepts with practical examples — no blind memorisation.',
+        title: 'شرح مفاهيمي مبسّط',
+        description: 'شرح خطوة بخطوة من الأساسيات يوضّح المفاهيم الفيزيائية بأمثلة عملية — بلا حفظ أعمى.',
         colorClass: 'green'
     },
     {
         icon: '📚',
-        title: 'Full Coverage of External Textbooks',
-        description: 'Comprehensive coverage of external textbook exercises and the most challenging questions from past ministry and exam papers.',
+        title: 'تغطية كاملة للكتب الخارجية',
+        description: 'تغطية شاملة لتمارين الكتب الخارجية وأصعب أسئلة الوزارة والامتحانات السابقة.',
         colorClass: 'yellow'
     },
     {
         icon: '📝',
-        title: 'Interactive Electronic Exams',
-        description: 'Simulated end-of-year exams with instant grading and a model answer that explains every solution step in detail.',
+        title: 'اختبارات إلكترونية تفاعلية',
+        description: 'امتحانات نهاية العام التجريبية بتصحيح فوري وإجابة نموذجية تشرح كل خطوة حل بالتفصيل.',
         colorClass: 'blue'
     },
     {
         icon: '📄',
-        title: 'Exclusive PDF Notes & Summaries',
-        description: 'Colour-coded notes summarising all laws and formulas, plus mind maps for every lesson — ready to download and print.',
+        title: 'ملازم وملخصات PDF حصرية',
+        description: 'ملازم ملوّنة تلخّص كل القوانين والمعادلات مع خرائط ذهنية لكل درس — جاهزة للتحميل والطباعة.',
         colorClass: 'green'
     },
     {
         icon: '📊',
-        title: 'Performance Reports & Continuous Tracking',
-        description: 'Detailed monitoring of each student\'s progress and exam scores to ensure the highest levels of academic excellence.',
+        title: 'تقارير الأداء والمتابعة المستمرة',
+        description: 'متابعة تفصيلية لتقدم كل طالب ودرجاته في الاختبارات لضمان أعلى مستويات التفوق الدراسي.',
         colorClass: 'yellow'
     },
     {
         icon: '💬',
-        title: 'Educational Support & Q&A',
-        description: 'A dedicated support team available around the clock to answer all student questions and solve difficult problems.',
+        title: 'دعم تعليمي وإجابة عن الأسئلة',
+        description: 'فريق دعم متخصص متاح على مدار الساعة للإجابة عن كل أسئلة الطلاب وحل المسائل الصعبة.',
         colorClass: 'blue'
     }
 ];
@@ -156,109 +174,109 @@ const FEATURES_DATA = [
 const STAGES_DATA = [
     {
         id: 'stage-3sec',
-        title: '3rd Year Secondary',
-        subtitle: 'Physics — Thanaweya Amma',
+        title: 'الصف الثالث الثانوي',
+        subtitle: 'فيزياء — الثانوية العامة',
         gradeTag: 'تالتة ثانوي',
         icon: '🎯',
-        description: 'Complete curriculum with exam night revisions, ministry question banks, and booklet model exams.',
-        tags: ['Current Electricity', 'Magnetism', 'Modern Physics', 'Semiconductors']
+        description: 'منهج كامل مع مراجعات ليلة الامتحان وبنوك أسئلة الوزارة والنماذج الامتحانية.',
+        tags: ['الكهربية التيارية', 'المغناطيسية', 'الفيزياء الحديثة', 'أشباه الموصلات']
     },
     {
         id: 'stage-2sec',
-        title: '2nd Year Secondary',
+        title: 'الصف الثاني الثانوي',
         subtitle: 'Scientific & Literary',
         gradeTag: 'تانية ثانوي',
         icon: '📊',
-        description: 'Detailed explanation of mechanics, heat and thermodynamics, waves, and optics.',
+        description: 'شرح تفصيلي للميكانيكا والحرارة والديناميكا الحرارية والموجات والبصريات.',
         tags: ['Mechanics', 'Thermodynamics', 'Waves', 'Optics']
     },
     {
         id: 'stage-1sec',
-        title: '1st Year Secondary',
+        title: 'الصف الأول الثانوي',
         subtitle: 'General & Al-Azhar',
         gradeTag: 'أولى ثانوي',
         icon: '⚛️',
-        description: 'Solid foundation for secondary school physics in measurement, motion, forces, and energy.',
-        tags: ['Measurement', 'Kinematics', 'Dynamics', 'Work & Energy']
+        description: 'تأسيس قوي لفيزياء الثانوية في القياس والحركة والقوى والطاقة.',
+        tags: ['Measurement', 'Kinematics', 'Dynamics', 'Work & الطاقة']
     },
     {
         id: 'stage-1prep',
-        title: '1st Year Preparatory',
-        subtitle: 'Preparatory Stage',
+        title: 'الصف الأول الإعدادي',
+        subtitle: 'المرحلة الإعدادية',
         gradeTag: 'أولى إعدادي',
         icon: '💡',
-        description: 'The start of excellence in preparatory stage — matter, motion, and the first laws of physics.',
-        tags: ['Matter & Density', 'Motion', 'Forces', 'Energy']
+        description: 'بداية التفوق في المرحلة الإعدادية — المادة والحركة وأولى قوانين الفيزياء.',
+        tags: ['Matter & Density', 'Motion', 'Forces', 'الطاقة']
     },
     {
         id: 'stage-2prep',
-        title: '2nd Year Preparatory',
-        subtitle: 'Preparatory Stage',
+        title: 'الصف الثاني الإعدادي',
+        subtitle: 'المرحلة الإعدادية',
         gradeTag: 'تانية إعدادي',
         icon: '📊',
-        description: 'Strong foundation in heat, light, sound, and simple machines.',
-        tags: ['Heat', 'Light', 'Sound', 'Simple Machines']
+        description: 'تأسيس قوي في الحرارة والضوء والصوت والآلات البسيطة.',
+        tags: ['الحرارة', 'الضوء', 'الصوت', 'الآلات البسيطة']
     },
     {
         id: 'stage-3prep',
-        title: '3rd Year Preparatory',
-        subtitle: 'Preparatory Certificate',
+        title: 'الصف الثالث الإعدادي',
+        subtitle: 'الشهادة الإعدادية',
         gradeTag: 'تالتة إعدادي',
         icon: '🔭',
-        description: 'In-depth explanation of preparatory curriculum ensuring full marks and qualifying for secondary.',
-        tags: ['Electricity', 'Magnetism', 'Light & Lenses', 'Exercises']
+        description: 'شرح متعمق للمنهج الإعدادي يضمن الدرجة النهائية والاستعداد للمرحلة الثانوية.',
+        tags: ['Electricity', 'المغناطيسية', 'Light & Lenses', 'Exercises']
     },
     {
         id: 'stage-free',
-        title: 'Free Foundation Courses',
-        subtitle: 'Available to Everyone 🎁',
+        title: 'الكورسات التأسيسية المجانية',
+        subtitle: 'متاح للجميع 🎁',
         gradeTag: 'مجاني',
         icon: '🎁',
-        description: '100% free introductory & foundation course to experience the teaching method and master physics essentials.',
-        tags: ['Units & Measurement', 'Motion Basics', 'Forces & Energy', 'Platform Gift']
+        description: 'كورس تمهيدي وتأسيسي مجاني 100% لتجربة أسلوب الشرح وإتقان أساسيات الفيزياء.',
+        tags: ['Units & Measurement', 'أساسيات الحركة', 'Forces & الطاقة', 'هدية المنصة']
     }
 ];
 
 const FAQ_DATA = [
     {
-        q: 'How can I register and start watching courses?',
-        a: 'Click the "Create Account" button at the top of the page and enter your details (name, phone number, grade level, and a 6-character password). After registration you can immediately watch the free courses or activate your grade\'s course with an activation code.'
+        q: 'كيف أسجّل وأبدأ مشاهدة الكورسات؟',
+        a: 'انقر على زر «إنشاء حساب» في أعلى الصفحة وأدخل بياناتك (الاسم ورقم الهاتف والصف الدراسي وكلمة مرور من 6 أحرف). بعد التسجيل يمكنك مشاهدة الكورسات المجانية فورًا أو تفعيل كورس صفك بكود التفعيل.'
     },
     {
-        q: 'What is the activation code and how do I get it?',
-        a: 'The activation code is a unique code used to unlock a paid course on the platform for life. You can obtain it from الأستاذ محمد الصياد\'s centre or by contacting the technical support team directly via WhatsApp.'
+        q: 'ما هو كود التفعيل وكيف أحصل عليه؟',
+        a: 'كود التفعيل كود فريد يفتح كورسًا مدفوعًا على المنصة مدى الحياة. يمكنك الحصول عليه من سنتر الأستاذ محمد الصياد أو بالتواصل مباشرة مع فريق الدعم الفني عبر واتساب.'
     },
     {
-        q: 'Are the videos and notes available throughout the academic term?',
-        a: 'Yes! Once you activate a course, all videos, interactive quizzes, and PDF notes remain available to you 24 hours a day for the entire academic term — you can watch and review them as many times as you like.'
+        q: 'هل الفيديوهات والملازم متاحة طوال الترم الدراسي؟',
+        a: 'نعم! بمجرد تفعيل الكورس تظل كل الفيديوهات والاختبارات التفاعلية وملازم PDF متاحة لك على مدار 24 ساعة طوال الترم الدراسي — يمكنك المشاهدة والمراجعة كما تشاء.'
     },
     {
-        q: 'Does the platform include electronic exams with instant grading?',
-        a: 'Absolutely! After every unit and lesson there is an interactive electronic exam that simulates the latest Ministry of Education exam specifications, with instant grading and a detailed model answer showing every correct step.'
+        q: 'هل تحتوي المنصة على اختبارات إلكترونية بتصحيح فوري؟',
+        a: 'بالتأكيد! بعد كل وحدة ودرس يوجد اختبار إلكتروني تفاعلي يحاكي أحدث مواصفات وزارة التربية والتعليم، مع تصحيح فوري وإجابة نموذجية توضح كل خطوة صحيحة.'
     },
     {
-        q: 'Does the platform work on mobile, tablet, and desktop?',
-        a: 'Yes. الأستاذ محمد الصياد\'s platform is designed to run smoothly and responsively on all devices: smartphones, tablets, laptops, and desktop computers.'
+        q: 'هل تعمل المنصة على الموبايل والتابلت والكمبيوتر؟',
+        a: 'نعم. منصة الأستاذ محمد الصياد مصمّمة لتعمل بسلاسة وتجاوب على كل الأجهزة: الهواتف الذكية والتابلت واللابتوب وأجهزة الكمبيوتر.'
     },
     {
-        q: 'How can I contact الأستاذ محمد الصياد to ask questions and follow up on assignments?',
-        a: 'There is a dedicated educational team along with WhatsApp and Telegram groups for enrolled students to answer all questions, solve difficult problems, and follow up on assignments and periodic exams.'
+        q: 'كيف أتواصل مع الأستاذ محمد الصياد للاستفسار ومتابعة الواجبات؟',
+        a: 'يوجد فريق تعليمي متخصص بالإضافة إلى مجموعات واتساب وتيليجرام للطلاب المشتركين للإجابة عن كل الأسئلة وحل المسائل الصعبة ومتابعة الواجبات والاختبارات الدورية.'
     }
 ];
 
 const STATS_DATA = [
-    { icon: '👨‍🎓', number: 5000, suffix: '+', label: 'Successful Students' },
+    { icon: '👨‍🎓', number: 5000, suffix: '+', label: 'طالب ناجح' },
     { icon: '📚', number: 150, suffix: '+', label: 'Lessons & Lectures' },
-    { icon: '⏱️', number: 120, suffix: '+', label: 'Hours of Interactive Content' },
-    { icon: '⭐', number: 99, suffix: '%', label: 'Success & Excellence Rate' },
+    { icon: '⏱️', number: 120, suffix: '+', label: 'ساعات محتوى تفاعلي' },
+    { icon: '⭐', number: 99, suffix: '%', label: 'نسبة النجاح والتفوق' },
 ];
 
 const CURRENT_USER = {
-    name: 'Ahmed Mohamed',
+    name: 'أحمد محمد',
     initials: 'AM',
     email: 'student@example.com',
     phone: '01012345678',
-    grade: '1st Year Secondary',
+    grade: 'الصف الأول الثانوي',
     enrolledCourses: ['math-grade1-term1', 'math-grade2-term1'],
     completedLessons: 5,
     totalLessons: 54,
@@ -266,11 +284,11 @@ const CURRENT_USER = {
 };
 
 const ACTIVITY_DATA = [
-    { icon: '✅', text: 'Completed lesson "Laws of Motion"', time: '2 hours ago', color: 'green' },
-    { icon: '📝', text: 'Scored 90% on Kinematics Quiz', time: '5 hours ago', color: 'yellow' },
-    { icon: '🎥', text: 'Watched lesson "Electric Fields"', time: 'Yesterday', color: 'blue' },
-    { icon: '📄', text: 'Downloaded Unit 1 Summary PDF', time: '2 days ago', color: 'red' },
-    { icon: '🏆', text: 'Successfully finished Unit 1', time: '3 days ago', color: 'green' },
+    { icon: '✅', text: 'أتممت درس «قوانين الحركة»"Laws of Motion"', time: '2 hours ago', color: 'green' },
+    { icon: '📝', text: 'حصلت على 90% في اختبار الحركة', time: '5 hours ago', color: 'yellow' },
+    { icon: '🎥', text: 'شاهدت درس «المجالات الكهربية»"Electric Fields"', time: 'Yesterday', color: 'blue' },
+    { icon: '📄', text: 'حمّلت ملخص الوحدة الأولى PDF', time: '2 days ago', color: 'red' },
+    { icon: '🏆', text: 'أنهيت الوحدة الأولى بنجاح', time: '3 days ago', color: 'green' },
 ];
 
 // ═══════════════════════════════════════════════════════════════
@@ -430,7 +448,7 @@ function reorderContents(lessonId, orderedIds) {
 // ── Content Type Config ───────────────────────────────────────
 const CONTENT_TYPES = [
     { value: 'video', label: 'Video', icon: '🎥', badge: 'badge-primary' },
-    { value: 'pdf', label: 'PDF Document', icon: '📄', badge: 'badge-danger' },
+    { value: 'pdf', label: 'ملف PDF', icon: '📄', badge: 'badge-danger' },
     { value: 'quiz', label: 'Quiz', icon: '📝', badge: 'badge-accent' },
     { value: 'text', label: 'Text / Notes', icon: '📋', badge: 'badge-success' },
 ];
@@ -625,7 +643,7 @@ function getEffectiveCoursePackages(course, isEnrolled) {
                     : [{
                         id: dl.lessonId,
                         lessonId: dl.lessonId,
-                        title: dl.title || 'Lesson Content',
+                        title: dl.title || 'محتوى الدرس',
                         type: 'video',
                         duration: '—',
                         content: '',

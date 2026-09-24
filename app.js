@@ -234,12 +234,12 @@
                     <a href="#home" onclick="setTimeout(function(){scrollToSection('courses-section')},100)" class="nav-link">كل الكورسات</a>
                     <a href="#home" onclick="setTimeout(function(){scrollToSection('features-section')},100)" class="nav-link">المميزات</a>
                     <a href="#home" onclick="setTimeout(function(){scrollToSection('faq-section')},100)" class="nav-link">الأسئلة الشائعة</a>
-                    ${isAdmin() ? '<a href="#admin" class="nav-link admin-nav-link" data-page="admin">🛠 Admin</a>' : ''}
+                    ${isAdmin() ? '<a href="#admin" class="nav-link admin-nav-link" data-page="admin">🛠 لوحة التحكم</a>' : ''}
                 </nav>
 
                 <div class="header-actions">
                     <!-- Theme Toggle -->
-                    <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeToggleBtn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+                    <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeToggleBtn" aria-label="تبديل الوضع الداكن/الفاتح" title="تبديل الوضع">
                         <span class="theme-toggle-track">
                             <span class="theme-icon sun-icon">
                                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -260,12 +260,12 @@
                                     <div class="dropdown-email">${userEmail || userGrade}</div>
                                 </div>
                                 <button class="dropdown-item" onclick="navigate('profile')">
-                                    <span>👤</span> My Profile
+                                    <span>👤</span> ملفي الشخصي
                                 </button>
-                                ${isAdmin() ? `<button class="dropdown-item" onclick="navigate('admin')"><span>🛠</span> Admin</button>` : ''}
+                                ${isAdmin() ? `<button class="dropdown-item" onclick="navigate('admin')"><span>🛠</span> لوحة التحكم</button>` : ''}
                                 <div class="dropdown-divider"></div>
                                 <button class="dropdown-item danger" onclick="handleLogout()">
-                                    <span>🚪</span> Sign Out
+                                    <span>🚪</span> تسجيل الخروج
                                 </button>
                             </div>
                         </div>
@@ -273,7 +273,7 @@
                         <a href="#login" class="btn btn-outline btn-sm" id="headerLoginBtn">تسجيل الدخول</a>
                         <a href="#register" class="btn btn-primary btn-sm" id="headerRegisterBtn">إنشاء حساب</a>
                     `}
-                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="القائمة">☰</button>
                 </div>
             </div>
         </header>
@@ -294,33 +294,33 @@
             </div>
             <nav class="mobile-menu-nav">
                 <a href="#home" class="mobile-nav-link" data-page="home" onclick="closeMobileMenu()">
-                    <span class="icon">🏠</span> Home
+                    <span class="icon">🏠</span> الرئيسية
                 </a>
                 <a href="#courses" class="mobile-nav-link" data-page="courses" onclick="closeMobileMenu()">
-                    <span class="icon">📚</span> Courses
+                    <span class="icon">📚</span> الكورسات
                 </a>
                 <a href="#home" class="mobile-nav-link" onclick="closeMobileMenu(); setTimeout(function(){scrollToSection('courses-section')},150)">
-                    <span class="icon">🎓</span> All Courses
+                    <span class="icon">🎓</span> كل الكورسات
                 </a>
                 <a href="#home" class="mobile-nav-link" onclick="closeMobileMenu(); setTimeout(function(){scrollToSection('features-section')},150)">
-                    <span class="icon">✨</span> Platform Features
+                    <span class="icon">✨</span> مميزات المنصة
                 </a>
                 <a href="#home" class="mobile-nav-link" onclick="closeMobileMenu(); setTimeout(function(){scrollToSection('faq-section')},150)">
-                    <span class="icon">❓</span> FAQ
+                    <span class="icon">❓</span> الأسئلة الشائعة
                 </a>
                 ${isLoggedIn ? `
                     <a href="#profile" class="mobile-nav-link" data-page="profile" onclick="closeMobileMenu()">
-                        <span class="icon">👤</span> My Profile
+                        <span class="icon">👤</span> ملفي الشخصي
                     </a>
                     ${isAdmin() ? `<a href="#admin" class="mobile-nav-link admin-nav-link" data-page="admin" onclick="closeMobileMenu()"><span class="icon">🛠</span> Admin</a>` : ''}
                 ` : ''}
             </nav>
             <div class="mobile-menu-footer">
                 ${isLoggedIn ? `
-                    <button class="btn btn-outline btn-block" onclick="handleLogout(); closeMobileMenu();">Sign Out</button>
+                    <button class="btn btn-outline btn-block" onclick="handleLogout(); closeMobileMenu();">تسجيل الخروج</button>
                 ` : `
-                    <a href="#login" class="btn btn-primary btn-block" onclick="closeMobileMenu()">تسجيل الدخول</a>
-                    <a href="#register" class="btn btn-outline btn-block" onclick="closeMobileMenu()">إنشاء حساب</a>
+                    <a href="#register" class="btn btn-primary btn-block" onclick="closeMobileMenu()">إنشاء حساب</a>
+                    <a href="#login" class="btn btn-outline btn-block" onclick="closeMobileMenu()">تسجيل الدخول</a>
                 `}
             </div>
         </div>`;
@@ -340,12 +340,12 @@
                     </div>
                     <p>${SITE_CONFIG.description}</p>
                     <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;">
-                        <span class="badge badge-primary">Class of 2026</span>
-                        <span class="badge badge-accent">Foundation &amp; Comprehensive Content</span>
+                        <span class="badge badge-primary">دفعة 2026</span>
+                        <span class="badge badge-accent">محتوى تأسيسي وشامل</span>
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
+                    <h4>روابط سريعة</h4>
                     <a href="#home">الرئيسية</a>
                     <a href="#courses">كل الكورسات</a>
                     <a href="#home" onclick="scrollToSection('courses-section')">الكورسات</a>
@@ -353,38 +353,38 @@
                     ${!isLoggedIn ? '<a href="#register">إنشاء حساب</a>' : '<a href="#profile">ملفي الشخصي</a>'}
                 </div>
                 <div class="footer-col">
-                    <h4>Grade Levels</h4>
-                    <a href="#courses" onclick="filterHomeStage('تالتة ثانوي')">3rd Year Secondary</a>
-                    <a href="#courses" onclick="filterHomeStage('تانية ثانوي')">2nd Year Secondary</a>
-                    <a href="#courses" onclick="filterHomeStage('أولى ثانوي')">1st Year Secondary</a>
-                    <a href="#courses" onclick="filterHomeStage('بكالوريا عام برمجة')">Baccalaureate Programming</a>
-                    <a href="#courses" onclick="filterHomeStage('أولى إعدادي')">1st Year Preparatory</a>
-                    <a href="#courses" onclick="filterHomeStage('تانية إعدادي')">2nd Year Preparatory</a>
-                    <a href="#courses" onclick="filterHomeStage('تالتة إعدادي')">3rd Year Preparatory</a>
-                    <a href="#courses" onclick="filterHomeStage('مجاني')">Free Courses 🎁</a>
+                    <h4>المراحل الدراسية</h4>
+                    <a href="#courses" onclick="filterHomeStage('تالتة ثانوي')">الصف الثالث الثانوي</a>
+                    <a href="#courses" onclick="filterHomeStage('تانية ثانوي')">الصف الثاني الثانوي</a>
+                    <a href="#courses" onclick="filterHomeStage('أولى ثانوي')">الصف الأول الثانوي</a>
+                    <a href="#courses" onclick="filterHomeStage('بكالوريا عام برمجة')">بكالوريا برمجة</a>
+                    <a href="#courses" onclick="filterHomeStage('أولى إعدادي')">الصف الأول الإعدادي</a>
+                    <a href="#courses" onclick="filterHomeStage('تانية إعدادي')">الصف الثاني الإعدادي</a>
+                    <a href="#courses" onclick="filterHomeStage('تالتة إعدادي')">الصف الثالث الإعدادي</a>
+                    <a href="#courses" onclick="filterHomeStage('مجاني')">كورسات مجانية 🎁</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <a href="https://wa.me/201000000000" target="_blank" rel="noopener">📱 WhatsApp Support</a>
-                    <a href="#" target="_blank" rel="noopener">💬 Telegram Channel</a>
-                    <a href="#" target="_blank" rel="noopener">📘 Facebook Page</a>
-                    <a href="#login">🔑 Student Login</a>
+                    <h4>تواصل معنا</h4>
+                    <a href="https://wa.me/201000000000" target="_blank" rel="noopener">📱 دعم واتساب</a>
+                    <a href="#" target="_blank" rel="noopener">💬 قناة تيليجرام</a>
+                    <a href="#" target="_blank" rel="noopener">📘 صفحة فيسبوك</a>
+                    <a href="#login">🔑 دخول الطالب</a>
                 </div>
             <div class="footer-bottom">
                 <div class="footer-copy">
-                    <span>&copy; ${SITE_CONFIG.year} ${SITE_CONFIG.fullName}. All rights reserved.</span>
+                    <span>&copy; ${SITE_CONFIG.year} ${SITE_CONFIG.fullName}. جميع الحقوق محفوظة.</span>
                 </div>
                 <div class="footer-dev-credit">
-                    <span>Designed &amp; developed by</span>
+                    <span>تصميم وتطوير</span>
                     <a href="https://wa.me/201001352771" target="_blank" rel="noopener noreferrer" class="dev-name-link">
-                        <span class="dev-badge">Dev</span> Ahmed Amr Abu El-Hag
+                        <span class="dev-badge">المطوّر</span> Ahmed Amr Abu El-Hag
                     </a>
-                    <button class="footer-admin-btn" onclick="openDashModal()" title="Admin">Admin</button>
+                    <button class="footer-admin-btn" onclick="openDashModal()" title="لوحة التحكم">لوحة التحكم</button>
                 </div>
                 <div class="footer-social">
-                    <a href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">💬</a>
-                    <a href="#" aria-label="Telegram" title="Telegram">✈️</a>
-                    <a href="#" aria-label="Facebook" title="Facebook">📘</a>
+                    <a href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="واتساب" title="واتساب">💬</a>
+                    <a href="#" aria-label="تيليجرام" title="تيليجرام">✈️</a>
+                    <a href="#" aria-label="فيسبوك" title="فيسبوك">📘</a>
                 </div>
             </div>
         </div>`;
@@ -478,25 +478,25 @@
         <section class="page-section home-courses-section" id="courses-section">
             <div class="container">
                 <div class="home-courses-header">
-                    <span class="section-badge sb-blue"><span class="icon">📚</span> Available Courses</span>
-                    <h2 class="section-title">Platform Courses</h2>
+                    <span class="section-badge sb-blue"><span class="icon">📚</span> الكورسات المتاحة</span>
+                    <h2 class="section-title">كورسات المنصة</h2>
 
                     <!-- Search & Filters -->
                     <div class="home-search-box">
                         <span class="home-search-icon">🔍</span>
-                        <input type="text" class="home-search-input" id="homeCourseSearch" placeholder="Search by course name or grade..." oninput="handleHomeSearch(this.value)">
+                        <input type="text" class="home-search-input" id="homeCourseSearch" placeholder="ابحث باسم الكورس أو الصف..." oninput="handleHomeSearch(this.value)">
                     </div>
 
                     <div class="filter-chips">
-                        <button class="filter-chip active" data-grade="الكل" onclick="filterHomeStage('الكل', this)">All</button>
-                        <button class="filter-chip" data-grade="أولى ثانوي" onclick="filterHomeStage('أولى ثانوي', this)">1st Sec</button>
-                        <button class="filter-chip" data-grade="تانية ثانوي" onclick="filterHomeStage('تانية ثانوي', this)">2nd Sec</button>
-                        <button class="filter-chip" data-grade="تالتة ثانوي" onclick="filterHomeStage('تالتة ثانوي', this)">3rd Sec</button>
-                        <button class="filter-chip" data-grade="بكالوريا عام برمجة" onclick="filterHomeStage('بكالوريا عام برمجة', this)">Baccalaureate</button>
-                        <button class="filter-chip" data-grade="أولى إعدادي" onclick="filterHomeStage('أولى إعدادي', this)">1st Prep</button>
-                        <button class="filter-chip" data-grade="تانية إعدادي" onclick="filterHomeStage('تانية إعدادي', this)">2nd Prep</button>
-                        <button class="filter-chip" data-grade="تالتة إعدادي" onclick="filterHomeStage('تالتة إعدادي', this)">3rd Prep</button>
-                        <button class="filter-chip" data-grade="مجاني" onclick="filterHomeStage('مجاني', this)">🎁 Free</button>
+                        <button class="filter-chip active" data-grade="الكل" onclick="filterHomeStage('الكل', this)">الكل</button>
+                        <button class="filter-chip" data-grade="أولى ثانوي" onclick="filterHomeStage('أولى ثانوي', this)">الأول الثانوي</button>
+                        <button class="filter-chip" data-grade="تانية ثانوي" onclick="filterHomeStage('تانية ثانوي', this)">الثاني الثانوي</button>
+                        <button class="filter-chip" data-grade="تالتة ثانوي" onclick="filterHomeStage('تالتة ثانوي', this)">الثالث الثانوي</button>
+                        <button class="filter-chip" data-grade="بكالوريا عام برمجة" onclick="filterHomeStage('بكالوريا عام برمجة', this)">بكالوريا</button>
+                        <button class="filter-chip" data-grade="أولى إعدادي" onclick="filterHomeStage('أولى إعدادي', this)">الأول الإعدادي</button>
+                        <button class="filter-chip" data-grade="تانية إعدادي" onclick="filterHomeStage('تانية إعدادي', this)">الثاني الإعدادي</button>
+                        <button class="filter-chip" data-grade="تالتة إعدادي" onclick="filterHomeStage('تالتة إعدادي', this)">الثالث الإعدادي</button>
+                        <button class="filter-chip" data-grade="مجاني" onclick="filterHomeStage('مجاني', this)">🎁 مجاني</button>
                     </div>
                 </div>
 
@@ -506,8 +506,8 @@
 
                 <div class="empty-state" id="homeCoursesEmpty" style="display:none;margin-top:var(--space-xl);">
                     <div class="empty-state-icon">🔍</div>
-                    <h3>No Matching Courses</h3>
-                    <p>Try searching with another keyword or selecting a different grade.</p>
+                    <h3>لا توجد كورسات مطابقة</h3>
+                    <p>جرّب كلمة بحث أخرى أو اختر صفًا دراسيًا مختلفًا.</p>
                 </div>
             </div>
         </section>
@@ -515,9 +515,9 @@
         <!-- Features / Why Choose Us -->
         <section class="page-section" id="features-section">
             <div class="container text-center">
-                <span class="section-badge sb-violet"><span class="icon">✨</span> Why الأستاذ محمد الصياد?</span>
-                <h2 class="section-title">Everything You Need for Full Marks &amp; Excellence</h2>
-                <p class="section-subtitle">A comprehensive learning environment tailored to help you excel with maximum efficiency.</p>
+                <span class="section-badge sb-violet"><span class="icon">✨</span> لماذا الأستاذ محمد الصياد؟</span>
+                <h2 class="section-title">كل ما تحتاجه للدرجة النهائية والتفوق</h2>
+                <p class="section-subtitle">بيئة تعليمية متكاملة مصمّمة لتساعدك على التفوق بأعلى كفاءة.</p>
                 <div class="features-grid">
                     ${FEATURES_DATA.map((f, i) => `
                         <div class="feature-card reveal reveal-delay-${(i % 3) + 1}">
@@ -533,27 +533,27 @@
         <!-- 3-Step Roadmap -->
         <section class="page-section" style="background:var(--bg-alt);">
             <div class="container text-center">
-                <span class="section-badge sb-teal"><span class="icon">🚀</span> Easy Start</span>
-                <h2 class="section-title">How to Start Your Journey in 3 Steps</h2>
-                <p class="section-subtitle">Simple and fast steps to get started in just a few minutes.</p>
+                <span class="section-badge sb-teal"><span class="icon">🚀</span> بداية سهلة</span>
+                <h2 class="section-title">كيف تبدأ رحلتك في 3 خطوات</h2>
+                <p class="section-subtitle">خطوات بسيطة وسريعة لتبدأ في دقائق معدودة.</p>
                 <div class="steps-grid">
                     <div class="step-card reveal">
                         <div class="step-badge">1</div>
                         <div class="step-icon">👤</div>
-                        <h3>Create Free Account</h3>
-                        <p>Register your name, phone number, and grade level in under a minute.</p>
+                        <h3>إنشاء حساب مجاني</h3>
+                        <p>سجّل اسمك ورقم هاتفك وصفك الدراسي في أقل من دقيقة.</p>
                     </div>
                     <div class="step-card reveal reveal-delay-1">
                         <div class="step-badge">2</div>
                         <div class="step-icon">🔑</div>
-                        <h3>Choose Your Course</h3>
-                        <p>Browse courses, start with the free foundation course, or activate your grade's course code.</p>
+                        <h3>اختر كورسك</h3>
+                        <p>تصفّح الكورسات وابدأ بالكورس التأسيسي المجاني أو فعّل كود كورس صفك الدراسي.</p>
                     </div>
                     <div class="step-card reveal reveal-delay-2">
                         <div class="step-badge">3</div>
                         <div class="step-icon">🏆</div>
-                        <h3>Learn, Practice &amp; Excel!</h3>
-                        <p>Watch lectures, solve exercises and online exams, and achieve the full mark.</p>
+                        <h3>تعلّم وتدرّب وتفوّق!</h3>
+                        <p>شاهد المحاضرات وحُلّ التمارين والاختبارات الإلكترونية وحقّق الدرجة النهائية.</p>
                     </div>
                 </div>
             </div>
@@ -569,20 +569,20 @@
                         <div class="teacher-role-badge">أستاذ الفيزياء — المراحل الثانوية والإعدادية</div>
                     </div>
                     <div class="teacher-content">
-                        <span class="section-badge sb-volt"><span class="icon">⭐</span> Lead Instructor</span>
-                        <h2>Making Physics Clear, Intuitive &amp; Inspiring</h2>
+                        <span class="section-badge sb-volt"><span class="icon">⭐</span> المدرّس الرئيسي</span>
+                        <h2>نجعل الفيزياء واضحة وبديهية وملهمة</h2>
                         <p>
-                            "My core mission is not merely to teach formulas, but to build a scientific mindset that understands where the laws come from and how to apply them to solve the hardest problems with confidence. Over 15+ years, I have proudly guided thousands of students to top faculties and full marks."
+                            «رسالتي الأساسية ليست تدريس القوانين فحسب، بل بناء عقلية علمية تفهم من أين تأتي القوانين وكيف تُطبَّق لحلّ أصعب المسائل بثقة. على مدار أكثر من 15 عامًا، كان لي شرف توجيه آلاف الطلاب إلى أفضل الكليات والدرجات النهائية.»"
                         </p>
                         <div class="teacher-pills">
-                            <div class="teacher-pill"><span>🏆</span> 15+ Years Experience</div>
-                            <div class="teacher-pill"><span>🎯</span> Top Nationwide Ranks</div>
-                            <div class="teacher-pill"><span>⚛️</span> Exclusive Simplified Method</div>
-                            <div class="teacher-pill"><span>⚡</span> Personal Homework Follow-up</div>
+                            <div class="teacher-pill"><span>🏆</span> خبرة +15 عامًا</div>
+                            <div class="teacher-pill"><span>🎯</span> مراكز متقدمة على مستوى الجمهورية</div>
+                            <div class="teacher-pill"><span>⚛️</span> أسلوب مبسّط حصري</div>
+                            <div class="teacher-pill"><span>⚡</span> متابعة شخصية للواجبات</div>
                         </div>
                         <div style="display:flex;gap:12px;flex-wrap:wrap;">
-                            <a href="#courses" class="btn btn-primary btn-lg">Browse Courses &rarr;</a>
-                            <a href="https://wa.me/201000000000" target="_blank" rel="noopener" class="btn btn-outline btn-lg">💬 Contact Dr. Mohamed</a>
+                            <a href="#courses" class="btn btn-primary btn-lg">تصفّح الكورسات</a>
+                            <a href="https://wa.me/201000000000" target="_blank" rel="noopener" class="btn btn-outline btn-lg">💬 تواصل مع الأستاذ محمد</a>
                         </div>
                     </div>
                 </div>
@@ -592,9 +592,9 @@
         <!-- Testimonials Section -->
         <section class="page-section" style="background:var(--bg-alt);">
             <div class="container text-center">
-                <span class="section-badge sb-magenta"><span class="icon">💬</span> Student Reviews</span>
-                <h2 class="section-title">What Our Students &amp; Parents Say</h2>
-                <p class="section-subtitle">Real success stories of students who turned Physics into their greatest strength.</p>
+                <span class="section-badge sb-magenta"><span class="icon">💬</span> آراء الطلاب</span>
+                <h2 class="section-title">ماذا يقول طلابنا وأولياء أمورهم</h2>
+                <p class="section-subtitle">قصص نجاح حقيقية لطلاب حوّلوا الفيزياء إلى أكبر نقاط قوتهم.</p>
                 <div class="testimonials-grid">
                     ${TESTIMONIALS_DATA.map((t, i) => `
                         <div class="testimonial-card reveal reveal-delay-${(i % 3) + 1}">
@@ -616,9 +616,9 @@
         <!-- FAQ Section -->
         <section class="page-section" id="faq-section">
             <div class="container text-center">
-                <span class="section-badge sb-cyan"><span class="icon">❓</span> Help &amp; Info</span>
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Everything you need to know about registration, course activation, and using the platform.</p>
+                <span class="section-badge sb-cyan"><span class="icon">❓</span> مساعدة ومعلومات</span>
+                <h2 class="section-title">الأسئلة الشائعة</h2>
+                <p class="section-subtitle">كل ما تحتاج معرفته عن التسجيل وتفعيل الكورسات واستخدام المنصة.</p>
                 <div class="faq-grid">
                     ${FAQ_DATA.map((faq, idx) => `
                         <div class="faq-item ${idx === 0 ? 'open' : ''}" id="faq-item-${idx}">
@@ -639,14 +639,14 @@
         <section class="cta-section">
             <div class="container text-center">
                 <h2 class="reveal">جاهز للتفوق في الفيزياء مع الأستاذ محمد الصياد؟</h2>
-                <p class="reveal reveal-delay-1">Join thousands of students and experience an engaging learning journey that makes all the difference.</p>
+                <p class="reveal reveal-delay-1">انضم إلى آلاف الطلاب واستمتع برحلة تعلّم ممتعة تصنع الفارق.</p>
                 <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:var(--space-xl);">
                     ${isLoggedIn ? `
-                        <a href="#dashboard" class="btn btn-accent btn-xl reveal reveal-delay-2">📊 Go to Dashboard &rarr;</a>
+                        <a href="#dashboard" class="btn btn-accent btn-xl reveal reveal-delay-2">📊 Go to Dashboard &larr;</a>
                         <a href="#courses" class="btn btn-outline btn-xl reveal reveal-delay-2" style="border-color:#fff;color:#fff;">📚 استكشف الكورسات</a>
                     ` : `
-                        <a href="#register" class="btn btn-accent btn-xl reveal reveal-delay-2" id="ctaBannerRegisterBtn">✨ Create Free Account Now &rarr;</a>
-                        <a href="#login" class="btn btn-outline btn-xl reveal reveal-delay-2" style="border-color:#fff;color:#fff;">🔑 Sign In</a>
+                        <a href="#register" class="btn btn-accent btn-xl reveal reveal-delay-2" id="ctaBannerRegisterBtn">✨ أنشئ حسابك المجاني الآن &larr;</a>
+                        <a href="#login" class="btn btn-outline btn-xl reveal reveal-delay-2" style="border-color:#fff;color:#fff;">🔑 تسجيل الدخول</a>
                     `}
                 </div>
             </div>
@@ -673,18 +673,18 @@
         <div style="padding-top:calc(var(--header-height) + var(--space-2xl));padding-bottom:var(--space-3xl);">
             <div class="container">
                 <div class="text-center" style="margin-bottom:var(--space-2xl);">
-                    <span class="section-badge sb-blue"><span class="icon">📚</span> Courses</span>
-                    <h2 class="section-title">All Available Courses</h2>
-                    <p class="section-subtitle">Choose your grade level and explore courses available for you.</p>
+                    <span class="section-badge sb-blue"><span class="icon">📚</span> الكورسات</span>
+                    <h2 class="section-title">كل الكورسات المتاحة</h2>
+                    <p class="section-subtitle">اختر صفك الدراسي واستكشف الكورسات المتاحة لك.</p>
                 </div>
                 <div class="courses-filter-bar">
                     <div class="filter-search">
                         <span class="search-icon">🔍</span>
-                        <input type="text" id="courseSearchInput" placeholder="Search for a course..." oninput="filterCourses()">
+                        <input type="text" id="courseSearchInput" placeholder="ابحث عن كورس..." oninput="filterCourses()">
                     </div>
                     <div class="filter-chips" id="filterChips">
                         ${grades.map((g, i) => `
-                            <button class="filter-chip ${i === 0 ? 'active' : ''}" data-grade="${g}" onclick="filterByGrade('${g}', this)">${g === 'الكل' ? 'All' : g}</button>
+                            <button class="filter-chip ${i === 0 ? 'active' : ''}" data-grade="${g}" onclick="filterByGrade('${g}', this)">${(g === 'الكل' || g === 'All') ? 'الكل' : g}</button>
                         `).join('')}
                     </div>
                 </div>
@@ -693,8 +693,8 @@
                 </div>
                 <div class="empty-state" id="coursesEmpty" style="display:none;">
                     <div class="empty-state-icon">🔍</div>
-                    <h3>No Results Found</h3>
-                    <p>Try changing your search keyword or grade filter.</p>
+                    <h3>لا توجد نتائج</h3>
+                    <p>جرّب تغيير كلمة البحث أو فلتر الصف.</p>
                 </div>
             </div>
         </div>`;
@@ -708,17 +708,17 @@
             id => String(id) === String(course.id)
         );
 
-        let actionBtnText = 'Enter Course →';
+        let actionBtnText = 'دخول الكورس';
         let actionBtnClass = 'btn-primary';
 
         if (course.isFree) {
-            actionBtnText = '🎁 Start Free';
+            actionBtnText = 'ابدأ مجانًا';
             actionBtnClass = 'btn-accent';
         } else if (isEnrolled) {
-            actionBtnText = '▶️ Continue Course';
+            actionBtnText = 'متابعة الكورس';
             actionBtnClass = 'btn-primary';
         } else {
-            actionBtnText = '🔓 Activate Course';
+            actionBtnText = 'تفعيل الكورس';
             actionBtnClass = 'btn-primary';
         }
 
@@ -733,6 +733,9 @@
                <div class="pcc-img-fallback" style="display:none;"><div class="pcc-fallback-glow"></div><div class="pcc-fallback-icon">${icon}</div></div>`
             : `<div class="pcc-img-fallback"><div class="pcc-fallback-glow"></div><div class="pcc-fallback-icon">${icon}</div></div>`;
 
+        const IC_BOOK = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/></svg>';
+        const IC_CLOCK = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+        const IC_ARROW = '<svg class="pcc-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>';
         const gradeKey = course.gradeTag || course.grade || '';
 
         return `
@@ -742,26 +745,26 @@
                 ${imageContent}
                 <div class="pcc-overlay"></div>
                 <div class="pcc-top-badges">
-                    <span class="pcc-badge ${course.isFree ? 'pcc-badge-free' : 'pcc-badge-grade'}">${course.isFree ? '🎁 Free' : course.gradeTag}</span>
-                    ${isEnrolled ? '<span class="pcc-badge pcc-badge-enrolled">✅ Enrolled</span>' : ''}
+                    <span class="pcc-badge ${course.isFree ? 'pcc-badge-free' : 'pcc-badge-grade'}">${course.isFree ? 'مجاني 🎁' : course.gradeTag}</span>
+                    ${isEnrolled ? '<span class="pcc-badge pcc-badge-enrolled">مشترك</span>' : ''}
                 </div>
-                <div class="pcc-rating-chip">⭐ ${course.rating || 5.0}</div>
+                ${course.rating ? `<div class="pcc-rating-chip">⭐ ${course.rating}</div>` : ''}
             </div>
 
             <!-- معلومات الكورس — 30% -->
             <div class="pcc-info-zone">
-                <div class="pcc-grade-line">📌 ${course.grade || gradeKey}${course.term ? ' — ' + course.term : ''}</div>
+                <div class="pcc-grade-line"><span class="pcc-dot"></span>${course.grade || gradeKey}${course.term ? ' — ' + course.term : ''}</div>
                 <h3 class="pcc-title">${course.title}</h3>
                 <div class="pcc-meta-row">
-                    <span class="pcc-meta-chip">📚 ${course.lessonsCount || 0} Lessons</span>
-                    <span class="pcc-meta-chip">⏱️ ${course.duration || '—'}</span>
+                    <span class="pcc-meta-chip">${IC_BOOK} ${course.lessonsCount || 0} دروس</span>
+                    ${course.duration ? `<span class="pcc-meta-chip">${IC_CLOCK} ${course.duration}</span>` : ''}
                 </div>
                 <div class="pcc-footer">
                     <div class="pcc-price ${course.isFree ? 'pcc-price-free' : ''}">
-                        ${course.isFree ? 'Free 🎁' : course.price + ' <span class="pcc-currency">' + (course.currency || 'EGP') + '</span>'}
+                        ${course.isFree ? 'مجاني' : course.price + ' <span class="pcc-currency">' + (course.currency || 'ج.م') + '</span>'}
                     </div>
                     <button class="pcc-action-btn pcc-action-${course.isFree ? 'free' : (isEnrolled ? 'enrolled' : 'lock')}" onclick="event.stopPropagation(); openCourse('${course.id}')">
-                        ${actionBtnText}
+                        <span>${actionBtnText}</span>${IC_ARROW}
                     </button>
                 </div>
             </div>
@@ -858,29 +861,29 @@
                             ${course.isFree ? 'Free' : course.price + ' <span class="currency">' + course.currency + '</span>'}
                         </div>
                         <button class="btn btn-accent btn-block btn-lg" onclick="openCourse('${course.id}')">
-                            ${course.isFree ? 'Start Free Now' : 'Enter Course'}
+                            ${course.isFree ? 'ابدأ مجانًا الآن' : 'Enter Course'}
                         </button>
                     </div>
                     <div class="sidebar-details">
                         <div class="sidebar-detail-row">
-                            <span class="label">📚 Total Lessons</span>
+                            <span class="label">📚 عدد الدروس</span>
                             <span class="value">${allLessons.length} Lessons</span>
                         </div>
                         <div class="sidebar-detail-row">
-                            <span class="label">⏱️ Duration</span>
+                            <span class="label">⏱️ المدة</span>
                             <span class="value">${course.duration}</span>
                         </div>
                         <div class="sidebar-detail-row">
-                            <span class="label">📊 Grade Level</span>
+                            <span class="label">📊 المستوى</span>
                             <span class="value">${course.gradeTag}</span>
                         </div>
                         <div class="sidebar-detail-row">
-                            <span class="label">🎓 Certificate</span>
-                            <span class="value">Available</span>
+                            <span class="label">🎓 الشهادة</span>
+                            <span class="value">متاحة</span>
                         </div>
                         <div class="sidebar-detail-row">
-                            <span class="label">📱 Access</span>
-                            <span class="value">Full Term</span>
+                            <span class="label">📱 الوصول</span>
+                            <span class="value">طوال الترم</span>
                         </div>
                     </div>
                 </div>
@@ -890,9 +893,9 @@
         <section class="course-content-section">
             <div class="container">
                 <div class="course-tabs" id="courseTabs">
-                    <button class="course-tab active" data-tab="curriculum" onclick="switchCourseTab('curriculum', this)">Curriculum</button>
-                    <button class="course-tab" data-tab="overview" onclick="switchCourseTab('overview', this)">Overview</button>
-                    <button class="course-tab" data-tab="reviews" onclick="switchCourseTab('reviews', this)">Reviews</button>
+                    <button class="course-tab active" data-tab="curriculum" onclick="switchCourseTab('curriculum', this)">المنهج</button>
+                    <button class="course-tab" data-tab="overview" onclick="switchCourseTab('overview', this)">نظرة عامة</button>
+                    <button class="course-tab" data-tab="reviews" onclick="switchCourseTab('reviews', this)">التقييمات</button>
                 </div>
 
                 <div id="tab-curriculum">
@@ -931,14 +934,14 @@
 
                 <div id="tab-overview" style="display:none;">
                     <div class="card card-flat" style="padding:var(--space-xl);">
-                        <h3 style="margin-bottom:var(--space-md);">About This Course</h3>
+                        <h3 style="margin-bottom:var(--space-md);">عن هذا الكورس</h3>
                         <p style="line-height:2;margin-bottom:var(--space-lg);">${course.description}</p>
-                        <h4 style="margin-bottom:var(--space-md);">What You Will Learn</h4>
+                        <h4 style="margin-bottom:var(--space-md);">ماذا ستتعلم</h4>
                         <ul style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-                            <li style="display:flex;align-items:center;gap:8px;font-size:0.92rem;">✅ Understand core physical concepts</li>
-                            <li style="display:flex;align-items:center;gap:8px;font-size:0.92rem;">✅ Systematic problem-solving techniques</li>
+                            <li style="display:flex;align-items:center;gap:8px;font-size:0.92rem;">✅ فهم المفاهيم الفيزيائية الأساسية</li>
+                            <li style="display:flex;align-items:center;gap:8px;font-size:0.92rem;">✅ أساليب منهجية لحل المسائل</li>
                             <li style="display:flex;align-items:center;gap:8px;font-size:0.92rem;">✅ Real exam practice &amp; timed tests</li>
-                            <li style="display:flex;align-items:center;gap:8px;font-size:0.92rem;">✅ Comprehensive final term revision</li>
+                            <li style="display:flex;align-items:center;gap:8px;font-size:0.92rem;">✅ مراجعة نهائية شاملة للترم</li>
                         </ul>
                     </div>
                 </div>
@@ -968,7 +971,7 @@
     // LICENSE PAGE — Accordion: Packages -> Lessons (Clips)
     // ═══════════════════════════════════════════════════════════
     function renderLicensePage(courseId) {
-        // غير مسجل الدخول → حفظ الوجهة وتوجيه مباشر
+        // غير مسجل الدخول ← حفظ الوجهة وتوجيه مباشر
         if (!isLoggedIn) {
             sessionStorage.setItem('iraqiplatform_redirect', 'license/' + courseId);
             return renderAuthRequiredPage(courseId);
@@ -985,7 +988,7 @@
         const isFreeOrEnrolled = course.isFree || isEnrolled;
         const firstLessonId = allLessons[0] ? allLessons[0].id : '';
 
-        // إذا كان الطالب مشتركاً بالفعل في الكورس أو الكورس مجاني → تحويل تلقائي فوري للمحاضرة الأولى
+        // إذا كان الطالب مشتركاً بالفعل في الكورس أو الكورس مجاني ← تحويل تلقائي فوري للمحاضرة الأولى
         if (isFreeOrEnrolled && firstLessonId) {
             setTimeout(function () {
                 navigate('lesson/' + courseId + '/' + firstLessonId);
@@ -994,10 +997,10 @@
             <div style="padding-top:calc(var(--header-height) + var(--space-3xl));min-height:75vh;display:flex;align-items:center;justify-content:center;">
                 <div style="text-align:center;padding:36px 32px;background:var(--bg-surface);border-radius:24px;border:1px solid var(--border);box-shadow:0 12px 36px rgba(0,0,0,0.08);max-width:460px;margin:0 16px;">
                     <div style="font-size:3.2rem;margin-bottom:14px;">🚀</div>
-                    <h3 style="font-size:1.35rem;font-weight:900;margin-bottom:8px;color:var(--text-primary);">Opening the first lesson...</h3>
-                    <p style="color:var(--text-secondary);font-size:0.92rem;margin-bottom:24px;line-height:1.7;">You are enrolled in this course. Preparing the lesson player now.</p>
+                    <h3 style="font-size:1.35rem;font-weight:900;margin-bottom:8px;color:var(--text-primary);">جارٍ فتح الدرس الأول...</h3>
+                    <p style="color:var(--text-secondary);font-size:0.92rem;margin-bottom:24px;line-height:1.7;">أنت مشترك في هذا الكورس. جارٍ تجهيز مشغّل الدرس.</p>
                     <a href="#lesson/${courseId}/${firstLessonId}" class="btn btn-primary btn-lg btn-block" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;">
-                        <span>▶</span> Enter First Lesson Directly
+                        <span>▶</span> ادخل الدرس الأول مباشرة
                     </a>
                 </div>
             </div>`;
@@ -1010,11 +1013,11 @@
                 <!-- Course Header -->
                 <div class="license-course-header reveal" style="margin-bottom:var(--space-xl); background:var(--bg-surface); padding:28px 32px; border-radius:24px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,0.04);">
                     <div class="license-course-meta">
-                        <a href="#courses" class="btn btn-ghost btn-sm" style="margin-bottom:var(--space-md); border:1px solid var(--border); border-radius:10px; font-weight:800;">&larr; Back to Courses</a>
+                        <a href="#courses" class="btn btn-ghost btn-sm" style="margin-bottom:var(--space-md); border:1px solid var(--border); border-radius:10px; font-weight:800;">&larr; العودة للكورسات</a>
 
                         <div style="display:flex; align-items:center; gap:8px; margin-bottom:14px; flex-wrap:wrap;">
                             <span class="badge ${course.isFree ? 'badge-success' : 'badge-primary'}" style="padding:6px 14px; border-radius:8px; font-size:0.8rem; font-weight:900; letter-spacing:0.5px;">
-                                ${course.isFree ? '🎁 Free' : course.gradeTag}
+                                ${course.isFree ? '🎁 مجاني' : course.gradeTag}
                             </span>
                             ${course.term ? `<span class="badge badge-accent" style="padding:6px 14px; border-radius:8px; font-size:0.8rem; font-weight:900;">${course.term}</span>` : ''}
                         </div>
@@ -1042,8 +1045,8 @@
                     <div class="iq-prem-act-header">
                         <div class="iq-prem-act-lock">🔒</div>
                         <div class="iq-prem-act-header-text">
-                            <h3>This course requires activation to access all lectures</h3>
-                            <p>Subscription fee: <strong>${course.price || 0} ${course.currency || 'EGP'}</strong> — Choose your activation method:</p>
+                            <h3>هذا الكورس يحتاج إلى تفعيل للوصول إلى كل المحاضرات</h3>
+                            <p>رسوم الاشتراك:<strong>${course.price || 0} ${course.currency || 'EGP'}</strong> — اختر طريقة التفعيل:</p>
                         </div>
                     </div>
 
@@ -1055,21 +1058,21 @@
                             <div class="iq-prem-act-col-inner">
                                 <div class="iq-prem-opt-header">
                                     <span class="iq-prem-opt-icon">🔑</span>
-                                    <h4>Have an activation code? Enter it here</h4>
+                                    <h4>لديك كود تفعيل؟ أدخله هنا</h4>
                                 </div>
-                                <p class="iq-prem-opt-desc">If you purchased an activation code from the centre or support team, enter it below to activate immediately.</p>
+                                <p class="iq-prem-opt-desc">إذا اشتريت كود التفعيل من السنتر أو فريق الدعم، أدخله بالأسفل للتفعيل فورًا.</p>
                                 <div class="iq-prem-code-form">
                                     <input type="text"
                                            class="iq-prem-code-input"
                                            id="licenseCodeInput"
-                                           placeholder="Enter activation code"
+                                           placeholder="أدخل كود التفعيل"
                                            maxlength="12"
                                            dir="ltr"
                                            autocomplete="off"
                                            onkeydown="if(event.key==='Enter') activateLicenseCode('${courseId}')">
                                     <button class="iq-prem-code-btn" id="activateLicenseBtn"
                                             onclick="activateLicenseCode('${courseId}')">
-                                        Activate Code ✅
+                                        تفعيل الكود ✅
                                     </button>
                                 </div>
                             </div>
@@ -1080,28 +1083,28 @@
                             <div class="iq-prem-act-col-inner">
                                 <div class="iq-prem-opt-header">
                                     <span class="iq-prem-opt-icon">💸</span>
-                                    <h4>Don't have a code? Request one</h4>
+                                    <h4>ليس لديك كود؟ اطلب واحدًا</h4>
                                 </div>
-                                <p class="iq-prem-opt-desc">Transfer the fee via Vodafone Cash, then send your details to receive the code instantly.</p>
+                                <p class="iq-prem-opt-desc">حوّل الرسوم عبر فودافون كاش ثم أرسل بياناتك لتستلم الكود فورًا.</p>
 
                                 <div class="iq-prem-transfer-steps">
                                     <div class="iq-prem-step-row">
                                         <span class="iq-prem-step-num">1</span>
-                                        <span>Transfer fee (<strong>${course.price || 0} EGP</strong>) to:<br>
+                                        <span>تحويل الرسوم (<strong>${course.price || 0} EGP</strong>) to:<br>
                                         <span class="iq-prem-vf-num"
-                                              onclick="navigator.clipboard && navigator.clipboard.writeText('01220222307').then(function(){ showToast('Number copied', 'success'); })"
-                                              title="Click to copy">📱 01220222307 <small>📋</small></span></span>
+                                              onclick="navigator.clipboard && navigator.clipboard.writeText('01220222307').then(function(){ showToast('تم نسخ الرقم', 'success'); })"
+                                              title="اضغط للنسخ">📱 01220222307 <small>📋</small></span></span>
                                     </div>
                                     <div class="iq-prem-step-row">
                                         <span class="iq-prem-step-num">2</span>
-                                        <span>Click below to confirm transfer and receive your code via WhatsApp.</span>
+                                        <span>اضغط بالأسفل لتأكيد التحويل واستلام الكود عبر واتساب.</span>
                                     </div>
                                 </div>
 
                                 <button class="iq-prem-wa-btn"
                                         onclick="requestActivationWhatsApp('${courseId}', '${(course.title || '').replace(/'/g, "\\'")}', ${course.price || 0})">
                                     <span>💬</span>
-                                    Request Code via WhatsApp
+                                    اطلب الكود عبر واتساب
                                 </button>
                             </div>
                         </div>
@@ -1112,10 +1115,10 @@
                 <!-- Enrolled banner -->
                 <div class="iq-enrolled-banner reveal" style="margin-bottom:var(--space-2xl);">
                     <div style="font-size:3rem;margin-bottom:var(--space-xs);">🎉</div>
-                    <h2 style="font-size:1.4rem;font-weight:900;margin-bottom:var(--space-xs);color:var(--text-primary);">You are enrolled in this course!</h2>
-                    <p style="color:var(--text-secondary);margin-bottom:var(--space-lg);font-size:0.95rem;">All lectures, files, and exams are fully accessible.</p>
+                    <h2 style="font-size:1.4rem;font-weight:900;margin-bottom:var(--space-xs);color:var(--text-primary);">أنت مشترك في هذا الكورس!</h2>
+                    <p style="color:var(--text-secondary);margin-bottom:var(--space-lg);font-size:0.95rem;">كل المحاضرات والملفات والاختبارات متاحة لك بالكامل.</p>
                     <button class="btn btn-primary btn-lg" onclick="navigate('lesson/${courseId}/${firstLessonId}')">
-                        ▶ Start Watching First Lesson
+                        ▶ ابدأ مشاهدة الدرس الأول
                     </button>
                 </div>
                 `}
@@ -1124,7 +1127,7 @@
                 <div style="margin-top:var(--space-xl);">
                     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-lg);gap:12px;flex-wrap:wrap;">
                         <div>
-                            <h2 style="margin:0 0 4px;font-size:1.4rem;font-weight:900;">📋 Course Curriculum</h2>
+                            <h2 style="margin:0 0 4px;font-size:1.4rem;font-weight:900;">📋 منهج الكورس</h2>
                             <p style="margin:0;font-size:0.85rem;color:var(--text-muted);">${effectivePackages.reduce((t, p) => t + p.lessons.length, 0)} Lectures · ${effectivePackages.length} Units</p>
                         </div>
                     </div>
@@ -1152,7 +1155,7 @@
                 const typeLabel = lesson.type === 'video' ? '🎥 Video' : lesson.type === 'quiz' ? '📝 Exam' : '📄 PDF';
                 return `
                                         <div class="accordion-lesson-item ${lesson.isCompleted ? 'completed' : ''} ${!canAccess ? 'locked' : ''}"
-                                             onclick="${canAccess ? "navigate('lesson/" + courseId + "/" + lesson.id + "')" : "showToast('This lesson requires active enrollment. Complete payment or enter code above.', 'error')"}">
+                                             onclick="${canAccess ? "navigate('lesson/" + courseId + "/" + lesson.id + "')" : "showToast('هذا الدرس يتطلب اشتراكًا فعّالًا. أتمم الدفع أو أدخل الكود بالأعلى.', 'error')"}">
                                             <div class="accordion-lesson-left">
                                                 <span class="accordion-lesson-num">${pi + 1}.${li + 1}</span>
                                                 <div class="accordion-lesson-icon">${icon}</div>
@@ -1166,10 +1169,10 @@
                                             </div>
                                             <div class="accordion-lesson-right">
                                                 ${lesson.isCompleted
-                        ? '<span class="badge badge-success" style="font-size:0.75rem;">✓ Completed</span>'
+                        ? '<span class="badge badge-success" style="font-size:0.75rem;">✓ مكتمل</span>'
                         : canAccess
-                            ? '<span class="badge" style="font-size:0.75rem;background:rgba(116,62,210,0.1);color:#743ed2;border:1px solid rgba(116,62,210,0.2);">Available</span>'
-                            : '<span class="badge" style="font-size:0.75rem;background:rgba(115,104,135,0.1);color:#736887;border:1px solid rgba(115,104,135,0.2);">🔒 Locked</span>'}
+                            ? '<span class="badge" style="font-size:0.75rem;background:rgba(116,62,210,0.1);color:#743ed2;border:1px solid rgba(116,62,210,0.2);">متاحة</span>'
+                            : '<span class="badge" style="font-size:0.75rem;background:rgba(115,104,135,0.1);color:#736887;border:1px solid rgba(115,104,135,0.2);">🔒 مغلق</span>'}
                                             </div>
                                         </div>`;
             }).join('')}
@@ -1683,7 +1686,7 @@
     // LESSON PAGE — Index Lessons with Video Tabs & Segments
     // ═══════════════════════════════════════════════════════════
     function renderLessonPage(courseId, lessonId) {
-        // غير مسجل → توجيه لصفحة تسجيل الدخول مع حفظ الوجهة
+        // غير مسجل ← توجيه لصفحة تسجيل الدخول مع حفظ الوجهة
         if (!isLoggedIn) {
             sessionStorage.setItem('iraqiplatform_redirect', 'lesson/' + courseId + '/' + lessonId);
             return renderAuthRequiredPage(courseId);
@@ -1698,7 +1701,7 @@
         );
         const hasAccess = course.isFree || isEnrolled;
         if (!hasAccess) {
-            // مسجل لكن غير مفعَّل → صفحة التراخيص (المحتوى مقفول)
+            // مسجل لكن غير مفعَّل ← صفحة التراخيص (المحتوى مقفول)
             return renderLicensePage(courseId);
         }
 
@@ -1728,8 +1731,8 @@
                 <div class="container">
                     <div class="card" style="max-width:500px;margin:0 auto;padding:40px 20px;">
                         <div style="font-size:3.5rem;margin-bottom:12px;">📂</div>
-                        <h3>No lectures in this course yet</h3>
-                        <p style="color:var(--text-secondary);margin-bottom:20px;">The instructor hasn't added lessons to this course yet.</p>
+                        <h3>لا توجد محاضرات في هذا الكورس بعد</h3>
+                        <p style="color:var(--text-secondary);margin-bottom:20px;">لم يضف المدرّس دروسًا لهذا الكورس بعد.</p>
                         <a href="#license/${courseId}" class="btn btn-primary">&larr; Back to Course</a>
                     </div>
                 </div>
@@ -1757,9 +1760,9 @@
             <div class="lesson-sidebar" id="lessonSidebar">
                 <div class="lesson-sidebar-header">
                     <div class="lsh-top">
-                        <button class="lsh-back-btn" onclick="navigate('courses')" title="Back to Courses">&larr;</button>
+                        <button class="lsh-back-btn" onclick="navigate('courses')" title="العودة للكورسات">&larr;</button>
                         <div class="lsh-title">${course.title}</div>
-                        <button class="lsh-close-btn" onclick="toggleLessonSidebar(false)" title="Close menu">✕</button>
+                        <button class="lsh-close-btn" onclick="toggleLessonSidebar(false)" title="إغلاق القائمة">✕</button>
                     </div>
                     <div class="lesson-sidebar-progress">
                         <div class="lsp-bar">
@@ -1788,7 +1791,7 @@
             const isActive = l.id === lesson.id || l.lessonId === lesson.lessonId;
             const lessonRow = `
                                     <div class="sidebar-lesson-item ${isActive ? 'active' : ''} ${l.isCompleted ? 'completed' : ''} ${l.isLocked ? 'locked' : ''}"
-                                         onclick="${l.isLocked ? "showToast('This content is locked', 'error')" : "navigate('lesson/" + courseId + "/" + l.id + "'); if(window.innerWidth<=768) toggleLessonSidebar(false);"}">
+                                         onclick="${l.isLocked ? "showToast('هذا المحتوى مغلق', 'error')" : "navigate('lesson/" + courseId + "/" + l.id + "'); if(window.innerWidth<=768) toggleLessonSidebar(false);"}">
                                         <span class="sl-num">${li + 1}</span>
                                         <span class="sl-icon">${l.isCompleted ? '✅' : l.isLocked ? '🔒' : l.type === 'video' ? '▶️' : l.type === 'quiz' ? '📝' : '📄'}</span>
                                         <span class="sl-title">${l.title}</span>
@@ -1817,10 +1820,10 @@
                         <div>
                             <h1 class="lesson-title" style="margin:0 0 8px;">${lesson.title}</h1>
                             <div class="lesson-meta-row">
-                                <span class="badge badge-primary">🎥 Video Lecture</span>
+                                <span class="badge badge-primary">🎥 محاضرة فيديو</span>
                                 ${lesson.duration ? `<span class="lesson-duration">⏱️ ${lesson.duration}</span>` : ''}
-                                ${hasPdf ? `<span class="badge badge-danger" style="cursor:pointer;" onclick="switchLessonTab('pdf')">📄 PDF Notes</span>` : ''}
-                                ${hasQuiz ? `<span class="badge badge-accent" style="cursor:pointer;" onclick="switchLessonTab('quiz')">📝 Quiz Available</span>` : ''}
+                                ${hasPdf ? `<span class="badge badge-danger" style="cursor:pointer;" onclick="switchLessonTab('pdf')">📄 ملزمة PDF</span>` : ''}
+                                ${hasQuiz ? `<span class="badge badge-accent" style="cursor:pointer;" onclick="switchLessonTab('quiz')">📝 اختبار متاح</span>` : ''}
                             </div>
                         </div>
                     </div>
@@ -1829,7 +1832,7 @@
                 <!-- ═══════════ LESSON TABS BAR ═══════════ -->
                 <div class="lesson-tabs-nav" id="lessonTabsNav">
                     <button class="lesson-tab-btn active" id="ltab-btn-video" onclick="switchLessonTab('video')">
-                        <span class="lt-icon">🎥</span> Video Lecture
+                        <span class="lt-icon">🎥</span> محاضرة فيديو
                     </button>
                     ${hasPdf ? `
                     <button class="lesson-tab-btn" id="ltab-btn-pdf" onclick="switchLessonTab('pdf')">
@@ -1867,20 +1870,20 @@
                             <span>📖</span> Lesson Details &amp; Summary
                         </h3>
                         <p style="color:var(--text-secondary);line-height:1.85;margin-bottom:20px;">
-                            ${lesson.description || course.description || 'Comprehensive explanation and practical exercises with الأستاذ محمد الصياد.'}
+                            ${lesson.description || course.description || 'شرح شامل وتمارين عملية مع الأستاذ محمد الصياد.'}
                         </p>
 
                         <div style="border-top:1px dashed var(--border);padding-top:18px;">
                             <h4 style="font-size:0.95rem;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px;">
-                                <span>✏️</span> Your Notes for this lesson (Auto-saved):
+                                <span>✏️</span> ملاحظاتك لهذا الدرس (تُحفظ تلقائيًا):
                             </h4>
                             <textarea id="lessonStudentNote"
-                                      placeholder="Write your notes, formulas, and key points here while watching..."
+                                      placeholder="اكتب ملاحظاتك ومعادلاتك ونقاطك المهمة هنا أثناء المشاهدة..."
                                       style="width:100%;min-height:110px;padding:12px 14px;border-radius:12px;border:1.5px solid var(--border);background:var(--bg-alt);font-family:inherit;font-size:0.9rem;line-height:1.7;resize:vertical;"
                                       oninput="saveLessonNote('${courseId}', '${lesson.id || lesson.lessonId}')">${savedNote}</textarea>
                             <div style="font-size:0.75rem;color:var(--text-muted);margin-top:6px;display:flex;justify-content:space-between;">
-                                <span>🔒 Your notes are private and saved on your device</span>
-                                <span id="noteSavedStatus" style="color:var(--success);display:none;">Saved ✓</span>
+                                <span>🔒 ملاحظاتك خاصة ومحفوظة على جهازك</span>
+                                <span id="noteSavedStatus" style="color:var(--success);display:none;">تم الحفظ ✓</span>
                             </div>
                         </div>
                     </div>
@@ -1899,7 +1902,7 @@
                             return renderLockedNavButton('&#128274; Next Lesson', gate);
                         }
                         var _navNext = "navigate('lesson/" + courseId + "/" + nextLesson.id + "')";
-                        return '<button class="btn btn-primary btn-lg" onclick="' + _navNext + '">Next Lesson &rarr;</button>';
+                        return '<button class="btn btn-primary btn-lg" onclick="' + _navNext + '">Next Lesson &larr;</button>';
                     })() : (() => {
                         // نفس بوابة الاختبار تتطبق على آخر درس قبل اعتبار الكورس مكتمل
                         const gate = getLessonQuizGateInfo(lesson, courseId);
@@ -1918,7 +1921,7 @@
                             <h2 style="margin:0 0 4px;font-size:1.2rem;font-weight:900;color:var(--text-primary);display:flex;align-items:center;gap:8px;">
                                 <span>📋</span> All Course Lectures &amp; Topics (${effectivePackages.length} Units · ${allLessons.length} Topics)
                             </h2>
-                            <p style="margin:0;font-size:0.85rem;color:var(--text-muted);">Click on any lesson to navigate directly:</p>
+                            <p style="margin:0;font-size:0.85rem;color:var(--text-muted);">اضغط على أي درس للانتقال إليه مباشرة:</p>
                         </div>
                         <span class="badge badge-primary" style="font-size:0.8rem;padding:6px 14px;font-weight:800;border-radius:10px;">
                             ${completedCount} / ${allLessons.length} Completed
@@ -1947,17 +1950,17 @@
                                     ${pkgLessons.map((l, li) => {
                 const isActive = l.id === lesson.id || l.lessonId === lesson.lessonId;
                 const icon = l.isCompleted ? '✅' : l.isLocked ? '🔒' : l.type === 'video' ? '▶️' : l.type === 'quiz' ? '📝' : '📄';
-                const typeLabel = l.type === 'video' ? '🎥 Video' : l.type === 'quiz' ? '📝 Quiz' : '📄 PDF Note';
+                const typeLabel = l.type === 'video' ? '🎥 Video' : l.type === 'quiz' ? '📝 الاختبار' : '📄 PDF Note';
                 const lessonRow = `
                                         <div class="accordion-lesson-item ${isActive ? 'active-lesson-item' : ''} ${l.isCompleted ? 'completed' : ''} ${l.isLocked ? 'locked' : ''}"
                                              style="${isActive ? 'background:rgba(116,62,210,0.08);border-left:3px solid var(--primary,#743ed2);' : ''}"
-                                             onclick="${l.isLocked ? "showToast('This content is locked', 'error')" : "navigate('lesson/" + courseId + "/" + l.id + "')"}">
+                                             onclick="${l.isLocked ? "showToast('هذا المحتوى مغلق', 'error')" : "navigate('lesson/" + courseId + "/" + l.id + "')"}">
                                             <div class="accordion-lesson-left" style="display:flex;align-items:center;gap:12px;flex:1;min-width:0;">
                                                 <span class="accordion-lesson-num" style="font-weight:800;font-size:0.8rem;color:var(--text-muted);min-width:24px;">${pi + 1}.${li + 1}</span>
                                                 <div class="accordion-lesson-icon" style="font-size:1.1rem;flex-shrink:0;">${icon}</div>
                                                 <div style="min-width:0;flex:1;">
                                                     <div class="accordion-lesson-title" style="font-weight:700;font-size:0.95rem;color:${isActive ? 'var(--primary,#743ed2)' : 'var(--text-primary)'};">
-                                                        ${l.title} ${isActive ? '<span class="badge badge-primary" style="font-size:0.7rem;margin-left:6px;padding:2px 8px;">Playing Now ◀</span>' : ''}
+                                                        ${l.title} ${isActive ? '<span class="badge badge-primary" style="font-size:0.7rem;margin-left:6px;padding:2px 8px;">قيد التشغيل ◀</span>' : ''}
                                                     </div>
                                                     <div class="accordion-lesson-meta" style="font-size:0.78rem;color:var(--text-muted);display:flex;gap:6px;align-items:center;margin-top:2px;">
                                                         <span>${typeLabel}</span>
@@ -1967,12 +1970,12 @@
                                             </div>
                                             <div class="accordion-lesson-right" style="flex-shrink:0;margin-left:8px;">
                                                 ${isActive
-                        ? '<span class="badge badge-primary" style="font-size:0.75rem;">Playing</span>'
+                        ? '<span class="badge badge-primary" style="font-size:0.75rem;">قيد التشغيل</span>'
                         : l.isCompleted
-                            ? '<span class="badge badge-success" style="font-size:0.75rem;">✓ Completed</span>'
+                            ? '<span class="badge badge-success" style="font-size:0.75rem;">✓ مكتمل</span>'
                             : !l.isLocked
-                                ? '<span class="badge" style="font-size:0.75rem;background:rgba(116,62,210,0.1);color:#743ed2;border:1px solid rgba(116,62,210,0.2);">Available</span>'
-                                : '<span class="badge" style="font-size:0.75rem;background:rgba(115,104,135,0.1);color:#736887;border:1px solid rgba(115,104,135,0.2);">🔒 Locked</span>'}
+                                ? '<span class="badge" style="font-size:0.75rem;background:rgba(116,62,210,0.1);color:#743ed2;border:1px solid rgba(116,62,210,0.2);">متاحة</span>'
+                                : '<span class="badge" style="font-size:0.75rem;background:rgba(115,104,135,0.1);color:#736887;border:1px solid rgba(115,104,135,0.2);">🔒 مغلق</span>'}
                                             </div>
                                         </div>`;
                 const quizRow = renderCurriculumQuizRow(l, courseId);
@@ -1986,7 +1989,7 @@
             </div>
         </div>
 
-        <button class="lesson-sidebar-toggle" onclick="toggleLessonSidebar()" aria-label="Lessons Menu">
+        <button class="lesson-sidebar-toggle" onclick="toggleLessonSidebar()" aria-label="قائمة الدروس">
             <span style="font-size:1.15rem;">📚</span>
             <span>Lessons (${allLessons.length})</span>
         </button>`;
@@ -2031,7 +2034,7 @@
                 if (isDirectVideo) {
                     iframeContainer.innerHTML = [
                         '<video controls style="position:absolute;top:0;left:0;width:100%;height:100%;background:#000;" preload="metadata">',
-                        '<source src="' + videoUrl + '">Your browser does not support HTML5 video.</video>'
+                        '<source src="' + videoUrl + '">متصفحك لا يدعم تشغيل الفيديو.</video>'
                     ].join('');
                 } else {
                     // Load directly (segment switch = user intent to play)
@@ -2051,7 +2054,7 @@
             }
             document.querySelectorAll('.segment-btn').forEach(b => b.classList.remove('active'));
             if (btnEl) btnEl.classList.add('active');
-            showToast('Now Playing: ' + (title || 'Segment'), 'info');
+            showToast('قيد التشغيل:' + (title || 'Segment'), 'info');
         };
 
         // ── تحويل الرابط إلى Embed آمن يدعم كل صيغ الفيديو ─────────
@@ -2115,8 +2118,8 @@
             <div class="video-player-wrap">
                 <div class="video-placeholder">
                     <div class="play-btn-big">▶</div>
-                    <span style="font-weight:700;font-size:1rem;color:rgba(255,255,255,0.85);">No recorded video available for this lesson yet</span>
-                    <span style="font-size:0.85rem;color:rgba(255,255,255,0.5);">You can check the attached PDF notes or online quiz above</span>
+                    <span style="font-weight:700;font-size:1rem;color:rgba(255,255,255,0.85);">لا يوجد فيديو مسجّل لهذا الدرس بعد</span>
+                    <span style="font-size:0.85rem;color:rgba(255,255,255,0.5);">يمكنك الاطلاع على ملزمة PDF المرفقة أو الاختبار الإلكتروني بالأعلى</span>
                 </div>
             </div>`;
             }
@@ -2159,7 +2162,7 @@
             if (isDirectVideo) {
                 videoInnerHTML = [
                     '<video controls style="position:absolute;top:0;left:0;width:100%;height:100%;background:#000;" preload="metadata">',
-                    '<source src="' + url + '">Your browser does not support HTML5 video.</video>'
+                    '<source src="' + url + '">متصفحك لا يدعم تشغيل الفيديو.</video>'
                 ].join('');
             } else if (ytId) {
                 // Thumbnail-first: student clicks to play inside the platform
@@ -2214,7 +2217,7 @@
             <div class="card card-flat" style="padding:var(--space-2xl);text-align:center;border-radius:18px;border:1px solid var(--border);background:var(--bg-surface);">
                 <div style="font-size:3.5rem;margin-bottom:var(--space-sm);">📄</div>
                 <h3 style="margin-bottom:var(--space-xs);">${lesson.pdfName || lesson.title || 'PDF File'}</h3>
-                <p style="color:var(--text-secondary);">No PDF file available for this lesson currently.</p>
+                <p style="color:var(--text-secondary);">لا يوجد ملف PDF لهذا الدرس حاليًا.</p>
             </div>`;
             }
             return `
@@ -2222,8 +2225,8 @@
             <div class="pdf-actions">
                 <div class="pdf-title">📄 ${lesson.pdfName || lesson.title || 'Lesson Notes &amp; Summary'}</div>
                 <div style="display:flex;gap:8px;">
-                    <a href="${url}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">🔍 Open in New Tab</a>
-                    <a href="${url}" download class="btn btn-outline btn-sm">⬇️ Download PDF</a>
+                    <a href="${url}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">🔍 فتح في تبويب جديد</a>
+                    <a href="${url}" download class="btn btn-outline btn-sm">⬇️ تحميل PDF</a>
                 </div>
             </div>
             <iframe src="${url}" title="${lesson.title || 'PDF'}"></iframe>
@@ -2239,7 +2242,7 @@
             var locked = !!l.isLocked;
             var icon = passed ? '✅' : locked ? '🔒' : '📝';
             var navAction = locked
-                ? "showToast('Complete the lesson first to unlock its quiz', 'error')"
+                ? "showToast('أكمل الدرس أولًا لفتح اختباره', 'error')"
                 : "navigate('test/" + l.quizId + "/" + courseId + "/" + (l.id || '') + "'); if(window.innerWidth<=768) toggleLessonSidebar(false);";
             return `
                                     <div class="sidebar-lesson-item ${passed ? 'completed' : ''} ${locked ? 'locked' : ''}"
@@ -2247,7 +2250,7 @@
                                          onclick="${navAction}">
                                         <span class="sl-num">↳</span>
                                         <span class="sl-icon">${icon}</span>
-                                        <span class="sl-title">Quiz</span>
+                                        <span class="sl-title">الاختبار</span>
                                         <span class="sl-duration"></span>
                                     </div>`;
         }
@@ -2263,12 +2266,12 @@
             var icon = passed ? '✅' : locked ? '🔒' : '📝';
             var title = 'Quiz: ' + (quiz ? quiz.title : l.title);
             var statusBadge = passed
-                ? '<span class="badge badge-success" style="font-size:0.75rem;">✓ Passed</span>'
+                ? '<span class="badge badge-success" style="font-size:0.75rem;">✓ ناجح</span>'
                 : locked
-                    ? '<span class="badge" style="font-size:0.75rem;background:rgba(115,104,135,0.1);color:#736887;border:1px solid rgba(115,104,135,0.2);">🔒 Locked</span>'
-                    : '<span class="badge" style="font-size:0.75rem;background:rgba(116,61,210,0.12);color:#5627A7;border:1px solid rgba(116,61,210,0.25);">' + (attempt ? 'Retake Available' : '📝 Available') + '</span>';
+                    ? '<span class="badge" style="font-size:0.75rem;background:rgba(115,104,135,0.1);color:#736887;border:1px solid rgba(115,104,135,0.2);">🔒 مغلق</span>'
+                    : '<span class="badge" style="font-size:0.75rem;background:rgba(116,61,210,0.12);color:#5627A7;border:1px solid rgba(116,61,210,0.25);">' + (attempt ? 'إعادة الاختبار متاحة' : '📝 متاح') + '</span>';
             var navAction = locked
-                ? "showToast('Complete the lesson first to unlock its quiz', 'error')"
+                ? "showToast('أكمل الدرس أولًا لفتح اختباره', 'error')"
                 : "navigate('test/" + l.quizId + "/" + courseId + "/" + (l.id || '') + "')";
             return `
                                         <div class="accordion-lesson-item ${passed ? 'completed' : ''} ${locked ? 'locked' : ''}"
@@ -2280,7 +2283,7 @@
                                                 <div style="min-width:0;flex:1;">
                                                     <div class="accordion-lesson-title" style="font-weight:700;font-size:0.95rem;color:var(--text-primary);">${title}</div>
                                                     <div class="accordion-lesson-meta" style="font-size:0.78rem;color:var(--text-muted);display:flex;gap:6px;align-items:center;margin-top:2px;">
-                                                        <span>📝 Quiz</span>
+                                                        <span>📝 الاختبار</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2300,7 +2303,7 @@
                 const g = window.QuizService.evaluateGate(currentUser.id, _cQuizId);
                 if (!g.locked) return { locked: false };
                 const nav = "navigate('test/" + _cQuizId + "/" + courseId + "/" + (lesson.id || '') + "')";
-                if (g.state === 'loading') return { locked: true, message: 'Checking your quiz status…', btnLabel: 'Open Quiz', navQuiz: nav };
+                if (g.state === 'loading') return { locked: true, message: 'جارٍ التحقق من حالة اختبارك…', btnLabel: 'Open Quiz', navQuiz: nav };
                 if (g.state === 'failed') return { locked: true, message: 'Score ' + g.achieved + '% &mdash; need ' + g.passRate + '% to unlock', btnLabel: 'Retry Quiz', navQuiz: nav };
                 return { locked: true, message: 'You must complete this lesson\'s quiz first (pass rate: ' + g.passRate + '%)', btnLabel: 'Start Quiz', navQuiz: nav };
             }
@@ -2350,7 +2353,7 @@
                 <div style="font-size:3.5rem;margin-bottom:var(--space-sm);">📝</div>
                 <h3 style="margin-bottom:var(--space-xs);">${lesson.title || 'Lesson Quiz'}</h3>
                 <p style="color:var(--text-secondary);margin-bottom:var(--space-lg);">
-                    ${quizId ? 'The quiz is being prepared by the teacher.' : 'No quiz attached to this lesson yet.'}
+                    ${quizId ? 'يجري المدرّس تجهيز الاختبار.' : 'لا يوجد اختبار مرتبط بهذا الدرس بعد.'}
                 </p>
             </div>`;
             }
@@ -2369,31 +2372,31 @@
             <div style="display:flex;justify-content:center;gap:24px;margin:20px 0;flex-wrap:wrap;">
                 <div style="background:var(--bg-alt);padding:12px 20px;border-radius:12px;border:1px solid var(--border);">
                     <div style="font-size:1.3rem;font-weight:900;color:var(--primary-500, #743DD2);">${qCount}</div>
-                    <div style="font-size:0.8rem;color:var(--text-muted);font-weight:700;">Questions</div>
+                    <div style="font-size:0.8rem;color:var(--text-muted);font-weight:700;">الأسئلة</div>
                 </div>
                 <div style="background:var(--bg-alt);padding:12px 20px;border-radius:12px;border:1px solid var(--border);">
                     <div style="font-size:1.3rem;font-weight:900;color:var(--accent);">${timeLabel}</div>
-                    <div style="font-size:0.8rem;color:var(--text-muted);font-weight:700;">Time Limit</div>
+                    <div style="font-size:0.8rem;color:var(--text-muted);font-weight:700;">مدة الاختبار</div>
                 </div>
                 ${prevAttempt ? `
                 <div style="background:var(--bg-alt);padding:12px 20px;border-radius:12px;border:1px solid var(--border);">
                     <div style="font-size:1.3rem;font-weight:900;color:${prevAttempt.passed ? 'var(--success)' : '#DC2626'};">${prevAttempt.score} / ${prevAttempt.total}</div>
-                    <div style="font-size:0.8rem;color:var(--text-muted);font-weight:700;">${prevAttempt.passed ? '✅ Passed' : 'Previous Score'}</div>
+                    <div style="font-size:0.8rem;color:var(--text-muted);font-weight:700;">${prevAttempt.passed ? '✅ Passed' : 'الدرجة السابقة'}</div>
                 </div>` : ''}
             </div>
 
             ${prevAttempt && prevAttempt.passed ? `
             <div style="background:#DCFCE7;color:#15803D;border:1px solid #86EFAC;border-radius:12px;padding:10px 16px;font-size:0.85rem;font-weight:700;margin:4px 0 16px;">
-                🔒 You've already passed this quiz — retake is disabled. You can view your result.
+                🔒 لقد اجتزت هذا الاختبار بالفعل — إعادة المحاولة غير متاحة. يمكنك عرض نتيجتك.
             </div>` : ''}
 
             <div style="margin-top:24px;">
                 <button class="btn btn-primary btn-lg" onclick="navigate('test/${quizId}/${courseId}/${lesson.id || ''}')" style="padding:14px 36px;font-size:1.05rem;font-weight:900;">
                     ${(function () {
-                        if (!prevAttempt) return '⚡ Start Quiz Now';
+                        if (!prevAttempt) return '⚡ ابدأ الاختبار الآن';
                         var maxA = parseInt(quiz.maxAttempts, 10) || 0;
                         var noLeft = maxA > 0 && (prevAttempt.attemptsUsed || 1) >= maxA;
-                        return (prevAttempt.passed || noLeft) ? '📋 View Result' : '⚡ Retake Quiz';
+                        return (prevAttempt.passed || noLeft) ? '📋 عرض النتيجة' : '⚡ أعد الاختبار';
                     })()}
                 </button>
             </div>
@@ -2436,8 +2439,8 @@
                 '<div style="font-size:1.15rem;flex-shrink:0;">' + (isCorrect ? '✅' : '❌') + '</div>' +
                 '<div style="flex:1;">' +
                     '<div style="font-weight:700;margin-bottom:4px;color:var(--text-primary);">' + (qi + 1) + '. ' + (q.q || '') + '</div>' +
-                    '<div style="font-size:0.85rem;color:' + (isCorrect ? '#16a34a' : '#dc2626') + ';">Your answer: ' + chosenLabel + '</div>' +
-                    (!isCorrect ? '<div style="font-size:0.85rem;color:#16a34a;">Correct answer: ' + correctLabel + '</div>' : '') +
+                    '<div style="font-size:0.85rem;color:' + (isCorrect ? '#16a34a' : '#dc2626') + ';">إجابتك: ' + chosenLabel + '</div>' +
+                    (!isCorrect ? '<div style="font-size:0.85rem;color:#16a34a;">الإجابة الصحيحة: ' + correctLabel + '</div>' : '') +
                 '</div></div>';
         }).join('');
 
@@ -2446,10 +2449,10 @@
             <div class="container" style="max-width:680px;margin:0 auto;padding:0 20px;">
                 <div style="background:var(--bg-surface,#fff);border:1.5px solid var(--border);border-radius:20px;padding:36px 28px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,0.05);">
                     <div style="font-size:3rem;margin-bottom:8px;">✅</div>
-                    <h2 style="font-size:1.3rem;font-weight:900;margin-bottom:6px;color:var(--text-primary);">You've Already Passed This Quiz</h2>
-                    <p style="color:var(--text-secondary);margin-bottom:18px;">${quiz.title || 'Quiz'} — Score: <strong>${attempt.score}/${attempt.total} (${attempt.percentage != null ? attempt.percentage : '—'}%)</strong></p>
+                    <h2 style="font-size:1.3rem;font-weight:900;margin-bottom:6px;color:var(--text-primary);">لقد اجتزت هذا الاختبار بالفعل</h2>
+                    <p style="color:var(--text-secondary);margin-bottom:18px;">${quiz.title || 'Quiz'} — الدرجة: <strong>${attempt.score}/${attempt.total} (${attempt.percentage != null ? attempt.percentage : '—'}%)</strong></p>
                     <div style="background:#DCFCE7;color:#15803D;border:1px solid #86EFAC;border-radius:12px;padding:10px 16px;font-size:0.85rem;font-weight:700;margin-bottom:22px;display:inline-block;">
-                        🔒 Retake is disabled after passing — review your answers below.
+                        🔒 لا يمكن إعادة الاختبار بعد النجاح — راجع إجاباتك بالأسفل.
                     </div>
                     <div>
                         <button class="btn btn-primary" onclick="navigate('${backUrl}')">&larr; Back to Lesson</button>
@@ -2502,7 +2505,7 @@
         const root = document.getElementById('quizRoot');
         if (!root || !window.QuizUI || !currentUser) return;
         window.QuizUI.injectStyles();
-        root.innerHTML = '<div class="qz-page"><div class="qz-wrap"><div class="qz-card"><div class="qz-loading"><div class="qz-spin"></div><div>Loading quiz…</div></div></div></div></div>';
+        root.innerHTML = '<div class="qz-page"><div class="qz-wrap"><div class="qz-card"><div class="qz-loading"><div class="qz-spin"></div><div>جارٍ تحميل الاختبار…</div></div></div></div></div>';
         const user = currentUser;
         const go = () => {
             if (!root.isConnected) return;
@@ -2591,7 +2594,7 @@
 
                 <!-- Breadcrumb -->
                 <div class="admin-breadcrumb reveal">
-                    <a href="#admin" class="admin-breadcrumb-link">🛠 Admin</a>
+                    <a href="#admin" class="admin-breadcrumb-link">🛠 لوحة التحكم</a>
                     <span class="admin-breadcrumb-sep">›</span>
                     <span>${course.title}</span>
                 </div>
@@ -2655,7 +2658,7 @@
                     </div>
                 </div>
                 <div class="admin-modal-footer">
-                    <button class="btn btn-ghost" onclick="closeLessonModal()">Cancel</button>
+                    <button class="btn btn-ghost" onclick="closeLessonModal()">إلغاء</button>
                     <button class="btn btn-primary" onclick="saveLessonModal()">💾 Save Lesson</button>
                 </div>
             </div>
@@ -2696,7 +2699,7 @@
                     </div>
                 </div>
                 <div class="admin-modal-footer">
-                    <button class="btn btn-ghost" onclick="closeContentModal()">Cancel</button>
+                    <button class="btn btn-ghost" onclick="closeContentModal()">إلغاء</button>
                     <button class="btn btn-primary" onclick="saveContentModal()">💾 Save Content</button>
                 </div>
             </div>
@@ -2715,7 +2718,7 @@
                     <p style="color:var(--text-muted);font-size:0.88rem;margin-top:8px;">This action cannot be undone.</p>
                 </div>
                 <div class="admin-modal-footer">
-                    <button class="btn btn-ghost" onclick="closeDeleteModal()">Cancel</button>
+                    <button class="btn btn-ghost" onclick="closeDeleteModal()">إلغاء</button>
                     <button class="btn btn-danger" id="deleteModalConfirmBtn">🗑 Delete</button>
                 </div>
             </div>
@@ -2805,8 +2808,8 @@
         <div class="dashboard-page">
             <div class="container">
                 <div class="dashboard-welcome reveal">
-                    <h2>Welcome back, ${user.name || 'Student'}! 👋</h2>
-                    <p>Continue your learning journey — you're making wonderful progress!</p>
+                    <h2>مرحبًا بعودتك، ${user.name || 'Student'}! 👋</h2>
+                    <p>واصل رحلتك التعليمية — أنت تحقق تقدمًا رائعًا!'re making wonderful progress!</p>
                 </div>
 
                 <div class="dashboard-stats">
@@ -2814,28 +2817,28 @@
                         <div class="dash-stat-icon green">📚</div>
                         <div class="dash-stat-info">
                             <div class="stat-val">${enrolled.length}</div>
-                            <div class="stat-label">Enrolled Courses</div>
+                            <div class="stat-label">الكورسات المشترك بها</div>
                         </div>
                     </div>
                     <div class="dash-stat-card reveal reveal-delay-2">
                         <div class="dash-stat-icon yellow">✅</div>
                         <div class="dash-stat-info">
                             <div class="stat-val">${completedLessons}</div>
-                            <div class="stat-label">Completed Lessons</div>
+                            <div class="stat-label">الدروس المكتملة</div>
                         </div>
                     </div>
                     <div class="dash-stat-card reveal reveal-delay-3">
                         <div class="dash-stat-icon blue">📊</div>
                         <div class="dash-stat-info">
                             <div class="stat-val">${avgScore}%</div>
-                            <div class="stat-label">Average Score</div>
+                            <div class="stat-label">متوسط الدرجات</div>
                         </div>
                     </div>
                     <div class="dash-stat-card reveal reveal-delay-4">
                         <div class="dash-stat-icon red">🔥</div>
                         <div class="dash-stat-info">
                             <div class="stat-val">${user.streak || 1}</div>
-                            <div class="stat-label">Day Streak</div>
+                            <div class="stat-label">أيام متتالية</div>
                         </div>
                     </div>
                 </div>
@@ -2843,8 +2846,8 @@
                 <div class="dashboard-grid">
                     <div class="enrolled-courses-card reveal">
                         <div class="card-header">
-                            <h3>📚 Enrolled Courses</h3>
-                            <a href="#courses" class="btn btn-ghost btn-sm">View All</a>
+                            <h3>📚 الكورسات المشترك بها</h3>
+                            <a href="#courses" class="btn btn-ghost btn-sm">عرض الكل</a>
                         </div>
                         ${enrolled.length > 0 ? enrolled.map(c => {
             const allLessons = c.packages.flatMap(p => p.lessons);
@@ -2864,16 +2867,16 @@
         }).join('') : `
                             <div class="empty-state">
                                 <div class="empty-state-icon">📚</div>
-                                <h3>No Enrolled Courses</h3>
-                                <p>Browse available courses and start learning today!</p>
-                                <a href="#courses" class="btn btn-primary">Browse Courses</a>
+                                <h3>لا توجد كورسات مشترك بها</h3>
+                                <p>تصفّح الكورسات المتاحة وابدأ التعلّم اليوم!</p>
+                                <a href="#courses" class="btn btn-primary">تصفّح الكورسات</a>
                             </div>
                         `}
                     </div>
 
                     <div class="activity-card reveal reveal-delay-1">
                         <div class="card-header">
-                            <h3>⚡ Recent Activity</h3>
+                            <h3>⚡ آخر النشاطات</h3>
                         </div>
                         ${ACTIVITY_DATA.map(a => `
                             <div class="activity-item">
@@ -2924,59 +2927,59 @@
                         <div class="profile-email">${user.phone || ''}</div>
                         <div class="profile-badges">
                             <span class="badge badge-primary">🎓 ${user.grade || 'Student'}</span>
-                            <span class="badge badge-accent">⭐ Outstanding Student</span>
+                            <span class="badge badge-accent">⭐ طالب متميز</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="profile-grid">
                     <div class="profile-section reveal reveal-delay-1">
-                        <h3>👤 Personal Information</h3>
+                        <h3>👤 البيانات الشخصية</h3>
                         <form onsubmit="event.preventDefault(); saveProfileChanges();">
                             <div class="form-group">
-                                <label class="form-label">Full Name</label>
-                                <input type="text" class="form-input" id="profileName" value="${user.name || ''}" placeholder="Enter your full name">
+                                <label class="form-label">الاسم بالكامل</label>
+                                <input type="text" class="form-input" id="profileName" value="${user.name || ''}" placeholder="أدخل اسمك بالكامل">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Student Phone Number</label>
-                                <input type="tel" class="form-input phone-input" id="profilePhone" readonly title="Your phone number is your login ID" value="${user.phone || ''}" dir="ltr" maxlength="11" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 11)">
+                                <label class="form-label">رقم هاتف الطالب</label>
+                                <input type="tel" class="form-input phone-input" id="profilePhone" readonly title="رقم هاتفك هو معرّف الدخول" value="${user.phone || ''}" dir="ltr" maxlength="11" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 11)">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Parent's Phone Number</label>
+                                <label class="form-label">رقم هاتف ولي الأمر</label>
                                 <input type="tel" class="form-input phone-input" id="profileParentPhone" value="${user.parentPhone || ''}" dir="ltr" maxlength="11" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 11)">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Academic Grade</label>
+                                <label class="form-label">الصف الدراسي</label>
                                 <select class="form-select" id="profileGrade">
-                                    ${grades.map(g => `<option ${user.grade === g ? 'selected' : ''}>${g}</option>`).join('')}
+                                    ${grades.map(g => `<option value="${g}" ${user.grade === g ? 'selected' : ''}>${GRADE_AR[g] || g}</option>`).join('')}
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Governorate</label>
+                                <label class="form-label">المحافظة</label>
                                 <select class="form-select" id="profileGovernorate">
-                                    ${govs.map(g => `<option ${user.governorate === g ? 'selected' : ''}>${g}</option>`).join('')}
+                                    ${govs.map(g => `<option value="${g}" ${user.governorate === g ? 'selected' : ''}>${GOV_AR[g] || g}</option>`).join('')}
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                            <button type="submit" class="btn btn-primary">حفظ التغييرات</button>
                         </form>
                     </div>
 
                     <div class="profile-section reveal reveal-delay-2">
-                        <h3>🔒 Security</h3>
+                        <h3>🔒 الأمان</h3>
                         <form onsubmit="event.preventDefault(); changePassword();">
                             <div class="form-group">
-                                <label class="form-label">Current Password</label>
-                                <input type="password" class="form-input" placeholder="Enter current password" id="currentPasswordInput">
+                                <label class="form-label">كلمة المرور الحالية</label>
+                                <input type="password" class="form-input" placeholder="أدخل كلمة المرور الحالية" id="currentPasswordInput">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">New Password (at least 6 characters)</label>
-                                <input type="password" class="form-input" placeholder="6+ alphanumeric characters" id="newPasswordInput">
+                                <label class="form-label">كلمة المرور الجديدة (6 أحرف على الأقل)</label>
+                                <input type="password" class="form-input" placeholder="6 أحرف أو أرقام على الأقل" id="newPasswordInput">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Confirm New Password</label>
-                                <input type="password" class="form-input" placeholder="Re-enter new password" id="confirmPasswordInput">
+                                <label class="form-label">تأكيد كلمة المرور الجديدة</label>
+                                <input type="password" class="form-input" placeholder="أعد إدخال كلمة المرور الجديدة" id="confirmPasswordInput">
                             </div>
-                            <button type="submit" class="btn btn-primary">Update Password</button>
+                            <button type="submit" class="btn btn-primary">تحديث كلمة المرور</button>
                         </form>
                     </div>
                 </div>
@@ -2997,30 +3000,30 @@
     }
     function _renderLoginPageFallback() {
         return `
-        <div class="auth-page">
+        <div class="auth-page auth-page--login">
             <div class="auth-visual">
                 <div class="auth-visual-mesh"></div>
                 <div class="auth-visual-content">
                     <div class="auth-teacher-badge">
+                        ${AUTH_ORBITS}
                         <img src="teacher-hero.webp?v=20260923" alt="الأستاذ محمد الصياد — أستاذ الفيزياء" class="auth-t-img" onerror="this.src='صورة المدرس الجديد.jpeg'">
                         <div class="auth-t-info">
-                            <div class="auth-t-crown">👑</div>
                             <div class="auth-t-name" dir="rtl">الأستاذ محمد الصياد</div>
-                            <div class="auth-t-sub" dir="rtl">أستاذ الفيزياء ⚛️</div>
+                            <div class="auth-t-sub" dir="rtl">أستاذ الفيزياء</div>
                         </div>
                     </div>
 
-                    <h2 class="auth-visual-title">Welcome Back to Your Platform! ✨</h2>
-                    <p class="auth-visual-desc">Sign in to access your video lectures, practice exercises, and track your quiz performance in real time.</p>
+                    <h2 class="auth-visual-title">مرحبًا بعودتك إلى منصتك!</h2>
+                    <p class="auth-visual-desc">سجّل الدخول لتصل إلى محاضراتك وتمارينك وتتابع أداءك في الاختبارات لحظة بلحظة.</p>
 
                     <div class="auth-stats-grid">
                         <div class="auth-stat-card">
                             <div class="auth-stat-num">+10,000</div>
-                            <div class="auth-stat-lbl">Top Students</div>
+                            <div class="auth-stat-lbl">الطلاب المتفوقون</div>
                         </div>
                         <div class="auth-stat-card">
                             <div class="auth-stat-num">100%</div>
-                            <div class="auth-stat-lbl">Full Score Rate</div>
+                            <div class="auth-stat-lbl">نسبة الدرجات النهائية</div>
                         </div>
                     </div>
                 </div>
@@ -3034,7 +3037,7 @@
                             <span class="auth-logo-text">${SITE_CONFIG.name}</span>
                         </a>
                         <h1 class="auth-heading">تسجيل الدخول</h1>
-                        <p class="auth-subtitle">Enter your registered phone number and password to continue</p>
+                        <p class="auth-subtitle">مرحبًا بعودتك، تابع رحلتك التعليمية</p>
                     </div>
 
                     <div id="loginErrorMsg" class="auth-alert-error" style="display:none;"></div>
@@ -3042,44 +3045,44 @@
                     <form class="auth-form" onsubmit="event.preventDefault(); handleLogin();" id="loginForm" novalidate>
                         <div class="form-group">
                             <div class="form-label-row">
-                                <label class="form-label">📱 Student Phone Number</label>
-                                <span class="phone-len-counter" id="loginPhoneCounter">0 / 11 digits</span>
+                                <label class="form-label">رقم هاتف الطالب</label>
+                                <span class="phone-len-counter" id="loginPhoneCounter">0 / 11 رقمًا</span>
                             </div>
                             <div class="form-input-icon-wrapper">
-                                <span class="form-input-icon">📱</span>
+                                <span class="form-input-icon">${AUTH_ICONS.phone}</span>
                                 <input type="tel" class="form-input phone-input" placeholder="01xxxxxxxxx" required id="loginPhone" dir="ltr" maxlength="11" inputmode="numeric" autocomplete="tel" oninput="handlePhoneInputLive(this, 'loginPhoneCounter')">
                             </div>
-                            <div class="form-hint" id="loginPhoneHint">Must be 11 digits starting with 01 (digits only)</div>
+                            <div class="form-hint" id="loginPhoneHint">يجب أن يكون 11 رقمًا يبدأ بـ 01 (أرقام فقط)</div>
                         </div>
 
                         <div class="form-group">
                             <div class="form-label-row">
-                                <label class="form-label">🔒 Password</label>
-                                <a href="#" onclick="event.preventDefault(); showToast('Contact support via WhatsApp to reset your password', 'info');" class="forgot-pw-link">Forgot password?</a>
+                                <label class="form-label">كلمة المرور</label>
+                                <a href="#" onclick="event.preventDefault(); showToast('تواصل مع الدعم عبر واتساب لاستعادة كلمة المرور', 'info');" class="forgot-pw-link">نسيت كلمة المرور؟</a>
                             </div>
                             <div class="form-input-icon-wrapper" style="position:relative;">
-                                <span class="form-input-icon">🔒</span>
-                                <input type="password" class="form-input" placeholder="Enter your password" required id="loginPassword" autocomplete="current-password">
-                                <span class="password-toggle" onclick="togglePassword('loginPassword', this)" title="Show/Hide password">👁️</span>
+                                <span class="form-input-icon">${AUTH_ICONS.lock}</span>
+                                <input type="password" class="form-input" placeholder="أدخل كلمة المرور" required id="loginPassword" autocomplete="current-password">
+                                <span class="password-toggle" onclick="togglePassword('loginPassword', this)" title="إظهار/إخفاء كلمة المرور">${AUTH_ICONS.eye}</span>
                             </div>
                         </div>
 
                         <div class="form-options-row">
                             <label class="remember-label">
                                 <input type="checkbox" checked class="custom-checkbox" id="loginRemember">
-                                <span>Remember me on this device</span>
+                                <span>تذكّرني على هذا الجهاز</span>
                             </label>
                         </div>
 
                         <button type="submit" class="btn btn-auth-submit" id="loginSubmitBtn">
                             <span>تسجيل الدخول</span>
-                            <span class="btn-arrow-icon">→</span>
+                            <span class="btn-arrow-icon">←</span>
                         </button>
                     </form>
 
                     <div class="auth-footer-box">
-                        <span>Don't have an account yet?</span>
-                        <a href="#register" class="auth-switch-link">Create Free Account ✨</a>
+                        <span>ليس لديك حساب؟</span>
+                        <a href="#register" class="auth-switch-link">إنشاء حساب</a>
                     </div>
                 </div>
             </div>
@@ -3097,34 +3100,34 @@
     }
     function _renderRegisterPageFallback() {
         return `
-        <div class="auth-page">
+        <div class="auth-page auth-page--register">
             <div class="auth-visual">
                 <div class="auth-visual-mesh"></div>
                 <div class="auth-visual-content">
                     <div class="auth-teacher-badge">
+                        ${AUTH_ORBITS}
                         <img src="teacher-hero.webp?v=20260923" alt="الأستاذ محمد الصياد — أستاذ الفيزياء" class="auth-t-img" onerror="this.src='صورة المدرس الجديد.jpeg'">
                         <div class="auth-t-info">
-                            <div class="auth-t-crown">👑</div>
                             <div class="auth-t-name" dir="rtl">الأستاذ محمد الصياد</div>
-                            <div class="auth-t-sub" dir="rtl">أستاذ الفيزياء ⚛️</div>
+                            <div class="auth-t-sub" dir="rtl">أستاذ الفيزياء</div>
                         </div>
                     </div>
 
-                    <h2 class="auth-visual-title">Join the Physics Achievers! 🎓</h2>
-                    <p class="auth-visual-desc">Create your free account in seconds and unlock exclusive structured explanations and interactive quizzes.</p>
+                    <h2 class="auth-visual-title">انضم إلى المتفوقين في الفيزياء!</h2>
+                    <p class="auth-visual-desc">أنشئ حسابك المجاني في ثوانٍ واستمتع بشروحات منظّمة حصرية واختبارات تفاعلية.</p>
 
                     <div class="auth-features-list">
                         <div class="auth-feat-item">
-                            <span class="auth-feat-icon">✨</span>
-                            <span>Clear, structured step-by-step physics explanations</span>
+                            <span class="auth-feat-icon">${AUTH_ICONS.check}</span>
+                            <span>شروحات فيزياء واضحة ومنظّمة خطوة بخطوة</span>
                         </div>
                         <div class="auth-feat-item">
-                            <span class="auth-feat-icon">🎯</span>
-                            <span>Comprehensive exams with instant grading and model answers</span>
+                            <span class="auth-feat-icon">${AUTH_ICONS.check}</span>
+                            <span>اختبارات شاملة بتصحيح فوري وإجابات نموذجية</span>
                         </div>
                         <div class="auth-feat-item">
-                            <span class="auth-feat-icon">📊</span>
-                            <span>Continuous progress tracking and performance analytics</span>
+                            <span class="auth-feat-icon">${AUTH_ICONS.check}</span>
+                            <span>متابعة مستمرة للتقدم وتحليل للأداء</span>
                         </div>
                     </div>
                 </div>
@@ -3138,18 +3141,18 @@
                             <span class="auth-logo-text">${SITE_CONFIG.name}</span>
                         </a>
                         <h1 class="auth-heading">إنشاء حساب</h1>
-                        <p class="auth-subtitle">Fill in your academic details to join the platform</p>
+                        <p class="auth-subtitle">أنشئ حسابك وانضم إلى المنصة</p>
                     </div>
 
                     <div id="registerErrorMsg" class="auth-alert-error" style="display:none;"></div>
 
                     <form class="auth-form" onsubmit="event.preventDefault(); handleRegister();" id="registerForm" novalidate>
-                        <!-- Full Name -->
+                        <!-- الاسم بالكامل
                         <div class="form-group">
-                            <label class="form-label">👤 Student Full Name</label>
+                            <label class="form-label">اسم الطالب بالكامل</label>
                             <div class="form-input-icon-wrapper">
-                                <span class="form-input-icon">👤</span>
-                                <input type="text" class="form-input" placeholder="e.g. Ahmed Mohamed Ali" required id="registerFullName" autocomplete="name">
+                                <span class="form-input-icon">${AUTH_ICONS.user}</span>
+                                <input type="text" class="form-input" placeholder="مثال: أحمد محمد علي" required id="registerFullName" autocomplete="name">
                             </div>
                         </div>
 
@@ -3157,22 +3160,22 @@
                         <div class="form-row-auth">
                             <div class="form-group">
                                 <div class="form-label-row">
-                                    <label class="form-label">📱 Student Phone</label>
-                                    <span class="phone-len-counter" id="regPhoneCounter">0 / 11 digits</span>
+                                    <label class="form-label">رقم هاتف الطالب</label>
+                                    <span class="phone-len-counter" id="regPhoneCounter">0 / 11 رقمًا</span>
                                 </div>
                                 <div class="form-input-icon-wrapper">
-                                    <span class="form-input-icon">📱</span>
+                                    <span class="form-input-icon">${AUTH_ICONS.phone}</span>
                                     <input type="tel" class="form-input phone-input" placeholder="01xxxxxxxxx" required dir="ltr" id="registerPhone" maxlength="11" inputmode="numeric" autocomplete="tel" oninput="handlePhoneInputLive(this, 'regPhoneCounter')">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="form-label-row">
-                                    <label class="form-label">📞 Parent's Phone</label>
-                                    <span class="phone-len-counter" id="regParentPhoneCounter">0 / 11 digits</span>
+                                    <label class="form-label">رقم هاتف ولي الأمر</label>
+                                    <span class="phone-len-counter" id="regParentPhoneCounter">0 / 11 رقمًا</span>
                                 </div>
                                 <div class="form-input-icon-wrapper">
-                                    <span class="form-input-icon">📞</span>
+                                    <span class="form-input-icon">${AUTH_ICONS.phone}</span>
                                     <input type="tel" class="form-input phone-input" placeholder="01xxxxxxxxx" required dir="ltr" id="registerParentPhone" maxlength="11" inputmode="numeric" autocomplete="tel" oninput="handlePhoneInputLive(this, 'regParentPhoneCounter')">
                                 </div>
                             </div>
@@ -3181,52 +3184,52 @@
                         <!-- Grade & Governorate -->
                         <div class="form-row-auth">
                             <div class="form-group">
-                                <label class="form-label">📚 Academic Grade</label>
+                                <label class="form-label">الصف الدراسي</label>
                                 <select class="form-select" required id="registerGrade" onchange="handleGradeChange(this.value)">
-                                    <option value="" disabled selected>Select your grade</option>
-                                    <optgroup label="Preparatory Stage">
-                                        <option value="1st Year Preparatory">1st Year Preparatory</option>
-                                        <option value="2nd Year Preparatory">2nd Year Preparatory</option>
-                                        <option value="3rd Year Preparatory">3rd Year Preparatory</option>
+                                    <option value="" disabled selected>اختر صفك الدراسي</option>
+                                    <optgroup label="المرحلة الإعدادية">
+                                        <option value="1st Year Preparatory">الصف الأول الإعدادي</option>
+                                        <option value="2nd Year Preparatory">الصف الثاني الإعدادي</option>
+                                        <option value="3rd Year Preparatory">الصف الثالث الإعدادي</option>
                                     </optgroup>
-                                    <optgroup label="Secondary Stage">
-                                        <option value="1st Year Secondary">1st Year Secondary</option>
-                                        <option value="2nd Year Secondary">2nd Year Secondary</option>
-                                        <option value="2nd Year Secondary — Programming">2nd Year Secondary — Programming</option>
-                                        <option value="Baccalaureate Programming">Baccalaureate Programming</option>
-                                        <option value="3rd Year Secondary">3rd Year Secondary</option>
+                                    <optgroup label="المرحلة الثانوية">
+                                        <option value="1st Year Secondary">الصف الأول الثانوي</option>
+                                        <option value="2nd Year Secondary">الصف الثاني الثانوي</option>
+                                        <option value="2nd Year Secondary — Programming">الصف الثاني الثانوي — برمجة</option>
+                                        <option value="Baccalaureate Programming">بكالوريا برمجة</option>
+                                        <option value="3rd Year Secondary">الصف الثالث الثانوي</option>
                                     </optgroup>
                                 </select>
                             </div>
 
                             <div class="form-group">
-                                <label class="form-label">🏛️ Governorate</label>
+                                <label class="form-label">المحافظة</label>
                                 <select class="form-select" required id="registerGovernorate">
-                                    <option value="" disabled selected>Select your governorate</option>
-                                    <option>Cairo</option><option>Giza</option><option>Alexandria</option>
-                                    <option>Dakahlia</option><option>Beheira</option><option>Fayoum</option>
-                                    <option>Gharbia</option><option>Ismailia</option><option>Menofia</option>
-                                    <option>Minya</option><option>Qalyubia</option><option>New Valley</option>
-                                    <option>Suez</option><option>Aswan</option><option>Assiut</option>
-                                    <option>Beni Suef</option><option>Port Said</option><option>Damietta</option>
-                                    <option>Sharqia</option><option>South Sinai</option><option>Kafr El Sheikh</option>
-                                    <option>Matrouh</option><option>Luxor</option><option>Qena</option>
-                                    <option>North Sinai</option><option>Sohag</option><option>Red Sea</option>
+                                    <option value="" disabled selected>اختر محافظتك</option>
+                                    <option>القاهرة</option><option>الجيزة</option><option>الإسكندرية</option>
+                                    <option>الدقهلية</option><option>البحيرة</option><option>الفيوم</option>
+                                    <option>الغربية</option><option>الإسماعيلية</option><option>المنوفية</option>
+                                    <option>المنيا</option><option>القليوبية</option><option>الوادي الجديد</option>
+                                    <option>السويس</option><option>أسوان</option><option>أسيوط</option>
+                                    <option>بني سويف</option><option>بورسعيد</option><option>دمياط</option>
+                                    <option>الشرقية</option><option>جنوب سيناء</option><option>كفر الشيخ</option>
+                                    <option>مطروح</option><option>الأقصر</option><option>قنا</option>
+                                    <option>شمال سيناء</option><option>سوهاج</option><option>البحر الأحمر</option>
                                 </select>
                             </div>
                         </div>
 
                         <!-- Section (For 2nd Secondary) -->
                         <div class="form-group" id="sectionGroup" style="display:none;">
-                            <label class="form-label">🔬 Choose Section</label>
+                            <label class="form-label">اختر الشعبة</label>
                             <div class="section-radio-pills">
                                 <label class="radio-pill-card">
                                     <input type="radio" name="registerSection" value="General" id="sectionAmm">
-                                    <span>📖 General (Science / Arts)</span>
+                                    <span>عام (علمي / أدبي)</span>
                                 </label>
                                 <label class="radio-pill-card">
                                     <input type="radio" name="registerSection" value="Baccalaureate" id="sectionBak">
-                                    <span>🎓 International Baccalaureate / Languages</span>
+                                    <span>بكالوريا دولية / لغات</span>
                                 </label>
                             </div>
                         </div>
@@ -3234,11 +3237,11 @@
                         <!-- Password & Confirm -->
                         <div class="form-row-auth">
                             <div class="form-group">
-                                <label class="form-label">🔒 Password <small>(6+ characters)</small></label>
+                                <label class="form-label">كلمة المرور<small>(6 أحرف أو أكثر)</small></label>
                                 <div class="form-input-icon-wrapper" style="position:relative;">
-                                    <span class="form-input-icon">🔒</span>
-                                    <input type="password" class="form-input" placeholder="Enter password" required id="registerPassword" oninput="checkPasswordStrength(this.value)" autocomplete="new-password">
-                                    <span class="password-toggle" onclick="togglePassword('registerPassword', this)">👁️</span>
+                                    <span class="form-input-icon">${AUTH_ICONS.lock}</span>
+                                    <input type="password" class="form-input" placeholder="أدخل كلمة المرور" required id="registerPassword" oninput="checkPasswordStrength(this.value)" autocomplete="new-password">
+                                    <span class="password-toggle" onclick="togglePassword('registerPassword', this)">${AUTH_ICONS.eye}</span>
                                 </div>
                                 <div class="password-strength-bar" id="passwordStrengthBar" style="margin-top:6px;height:4px;border-radius:4px;background:var(--border);overflow:hidden;display:none;">
                                     <div id="passwordStrengthFill" style="height:100%;border-radius:4px;transition:all 0.3s;"></div>
@@ -3247,11 +3250,11 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="form-label">🔒 Confirm Password</label>
+                                <label class="form-label">تأكيد كلمة المرور</label>
                                 <div class="form-input-icon-wrapper" style="position:relative;">
-                                    <span class="form-input-icon">🔒</span>
-                                    <input type="password" class="form-input" placeholder="Re-enter password" required id="registerConfirmPassword" autocomplete="new-password">
-                                    <span class="password-toggle" onclick="togglePassword('registerConfirmPassword', this)">👁️</span>
+                                    <span class="form-input-icon">${AUTH_ICONS.lock}</span>
+                                    <input type="password" class="form-input" placeholder="أعد إدخال كلمة المرور" required id="registerConfirmPassword" autocomplete="new-password">
+                                    <span class="password-toggle" onclick="togglePassword('registerConfirmPassword', this)">${AUTH_ICONS.eye}</span>
                                 </div>
                             </div>
                         </div>
@@ -3260,19 +3263,19 @@
                         <div class="form-options-row">
                             <label class="remember-label">
                                 <input type="checkbox" required class="custom-checkbox" id="registerTerms" checked>
-                                <span>I agree to the <a href="#" onclick="event.preventDefault(); showToast('Our terms ensure full privacy and protection of your data.', 'info');" class="auth-link-terms">Terms of Service &amp; Privacy Policy</a></span>
+                                <span>أوافق على<a href="#" onclick="event.preventDefault(); showToast('شروطنا تضمن الخصوصية الكاملة وحماية بياناتك.', 'info');" class="auth-link-terms">شروط الخدمة وسياسة الخصوصية</a></span>
                             </label>
                         </div>
 
                         <button type="submit" class="btn btn-auth-submit" id="registerSubmitBtn">
-                            <span>Create Account Now</span>
+                            <span>إنشاء حساب الآن ✨</span>
                             <span class="btn-arrow-icon">✨</span>
                         </button>
                     </form>
 
                     <div class="auth-footer-box">
-                        <span>Already have an account?</span>
-                        <a href="#login" class="auth-switch-link">Sign In directly →</a>
+                        <span>لديك حساب بالفعل؟</span>
+                        <a href="#login" class="auth-switch-link">تسجيل الدخول</a>
                     </div>
                 </div>
             </div>
@@ -3291,9 +3294,9 @@
             <div class="container">
                 <div class="empty-state">
                     <div class="empty-state-icon">🔍</div>
-                    <h3>Page Not Found</h3>
-                    <p>The page you are looking for does not exist or has been moved.</p>
-                    <a href="#home" class="btn btn-primary">Back to Home</a>
+                    <h3>الصفحة غير موجودة</h3>
+                    <p>الصفحة التي تبحث عنها غير موجودة أو تم نقلها.</p>
+                    <a href="#home" class="btn btn-primary">العودة للرئيسية</a>
                 </div>
             </div>
         </div>`;
@@ -3431,7 +3434,7 @@
     window.activateLicenseCode = async function (courseId) {
         if (!isLoggedIn || !currentUser) {
             sessionStorage.setItem('iraqiplatform_redirect', 'license/' + courseId);
-            showToast('Please sign in first to activate this course', 'error');
+            showToast('سجّل الدخول أولًا لتفعيل هذا الكورس', 'error');
             navigate('login');
             return;
         }
@@ -3441,13 +3444,13 @@
         const code = (input ? input.value : '').trim().toUpperCase();
 
         if (!code) {
-            showToast('⚠️ Please enter an activation code first', 'error');
+            showToast('⚠️ أدخل كود التفعيل أولًا', 'error');
             if (input) input.focus();
             return;
         }
 
         if (btn) {
-            btn.textContent = '⏳ Verifying code...';
+            btn.textContent = '⏳ جارٍ التحقق من الكود...';
             btn.disabled = true;
         }
 
@@ -3519,8 +3522,8 @@
             }
 
             if (!foundCode) {
-                showToast('❌ This code is invalid or does not exist in the system', 'error');
-                if (btn) { btn.textContent = 'Activate Code Now ✅'; btn.disabled = false; }
+                showToast('❌ هذا الكود غير صالح أو غير موجود في النظام', 'error');
+                if (btn) { btn.textContent = 'تفعيل الكود الآن ✅'; btn.disabled = false; }
                 if (input) { input.value = ''; input.focus(); }
                 return;
             }
@@ -3528,8 +3531,8 @@
             const targetCourseId = String(courseId || '');
             const codeCourseId = String(foundCode.courseId || '');
             if (codeCourseId && codeCourseId !== targetCourseId && codeCourseId !== 'all') {
-                showToast('⚠️ This code is assigned to a different course', 'error');
-                if (btn) { btn.textContent = 'Activate Code Now ✅'; btn.disabled = false; }
+                showToast('⚠️ هذا الكود مخصّص لكورس آخر', 'error');
+                if (btn) { btn.textContent = 'تفعيل الكود الآن ✅'; btn.disabled = false; }
                 return;
             }
 
@@ -3541,20 +3544,20 @@
 
                 if (isMyCode) {
                     await enrollStudentInCourse(targetCourseId);
-                    showToast('✅ Course already activated on your account — Opening first lesson...', 'success');
+                    showToast('✅ الكورس مفعّل بالفعل على حسابك — جارٍ فتح الدرس الأول...', 'success');
                     launchFirstLesson(targetCourseId);
                     return;
                 } else {
-                    showToast('❌ This activation code has already been used by another student', 'error');
-                    if (btn) { btn.textContent = 'Activate Code Now ✅'; btn.disabled = false; }
+                    showToast('❌ تم استخدام كود التفعيل هذا من قِبل طالب آخر', 'error');
+                    if (btn) { btn.textContent = 'تفعيل الكود الآن ✅'; btn.disabled = false; }
                     return;
                 }
             }
 
             if (foundCode.linkedStudentId && String(foundCode.linkedStudentId) !== String(currentUser.id)) {
                 if (foundCode.linkedStudentPhone && currentUser.phone && String(foundCode.linkedStudentPhone) !== String(currentUser.phone)) {
-                    showToast('⚠️ This code is assigned to a different student number', 'error');
-                    if (btn) { btn.textContent = 'Activate Code Now ✅'; btn.disabled = false; }
+                    showToast('⚠️ هذا الكود مخصّص لرقم طالب آخر', 'error');
+                    if (btn) { btn.textContent = 'تفعيل الكود الآن ✅'; btn.disabled = false; }
                     return;
                 }
             }
@@ -3597,15 +3600,15 @@
 
             await enrollStudentInCourse(targetCourseId);
 
-            showToast('🎉 Course activated successfully! Opening first lesson...', 'success');
-            if (btn) { btn.textContent = 'Activated Successfully ✅'; }
+            showToast('🎉 تم تفعيل الكورس بنجاح! جارٍ فتح الدرس الأول...', 'success');
+            if (btn) { btn.textContent = 'تم التفعيل بنجاح ✅'; }
 
             launchFirstLesson(targetCourseId);
 
         } catch (err) {
             console.error('[activateLicenseCode]', err);
-            showToast('❌ Error during activation: ' + err.message, 'error');
-            if (btn) { btn.textContent = 'Activate Code Now ✅'; btn.disabled = false; }
+            showToast('❌ حدث خطأ أثناء التفعيل: ' + err.message, 'error');
+            if (btn) { btn.textContent = 'تفعيل الكود الآن ✅'; btn.disabled = false; }
         }
     };
 
@@ -3622,11 +3625,11 @@
             'Hello! 👋\n' +
             'I would like to request an activation code for the following course:\n\n' +
             '📚 Course: ' + titleStr + '\n' +
-            '👤 Student Name: ' + name + '\n' +
+            '👤 اسم الطالب: ' + name + '\n' +
             (phone ? '📱 Phone: ' + phone + '\n' : '') +
             '💰 Amount: ' + priceStr + ' EGP\n' +
             '📲 Paid via Vodafone Cash: 01220222307\n\n' +
-            '(I will attach payment receipt in the next message)';
+            '(سأرفق إيصال الدفع في الرسالة التالية)';
 
         var encoded = encodeURIComponent(message);
         var waUrl = 'https://wa.me/201220222307?text=' + encoded;
@@ -3896,7 +3899,7 @@
             if (quizAnswers[qi] === q.correct) correct++;
         });
         const pct = Math.round((correct / QUIZ_DATA.questions.length) * 100);
-        showToast('Score: ' + correct + '/' + QUIZ_DATA.questions.length + ' (' + pct + '%) ' + (pct >= 80 ? '🎉' : pct >= 50 ? '👍' : '💪'), pct >= 50 ? 'success' : 'error');
+        showToast('الدرجة: ' + correct + '/' + QUIZ_DATA.questions.length + ' (' + pct + '%) ' + (pct >= 80 ? '🎉' : pct >= 50 ? '👍' : '💪'), pct >= 50 ? 'success' : 'error');
     };
 
     // Password toggle
@@ -3905,7 +3908,8 @@
         if (input) {
             const isPassword = input.type === 'password';
             input.type = isPassword ? 'text' : 'password';
-            toggle.textContent = isPassword ? '🙈' : '👁️';
+            toggle.innerHTML = isPassword ? AUTH_ICONS.eyeOff : AUTH_ICONS.eye;
+            toggle.classList.toggle('is-shown', isPassword);
         }
     };
 
@@ -3925,22 +3929,22 @@
         if (!hasValidChars) {
             fill.style.width = '100%';
             fill.style.background = '#ef4444';
-            text.textContent = '❌ Only English letters and numbers are allowed';
+            text.textContent = '❌ مسموح بالحروف الإنجليزية والأرقام فقط';
             text.style.color = '#ef4444';
         } else if (len < 6) {
             fill.style.width = (len / 6 * 100) + '%';
             fill.style.background = '#A054C6';
-            text.textContent = len + '/6 characters — enter at least ' + (6 - len) + ' more character(s)';
+            text.textContent = len + '/6 أحرف — أدخل ' + (6 - len) + ' حرف/أحرف إضافية';
             text.style.color = '#A054C6';
         } else if (len < 10) {
             fill.style.width = '70%';
             fill.style.background = '#10b981';
-            text.textContent = '✅ Good password (' + len + ' characters)';
+            text.textContent = '✅ كلمة مرور جيدة (' + len + ' characters)';
             text.style.color = '#10b981';
         } else {
             fill.style.width = '100%';
             fill.style.background = '#672fc8';
-            text.textContent = '💪 Strong password (' + len + ' characters)';
+            text.textContent = '💪 كلمة مرور قوية (' + len + ' characters)';
             text.style.color = '#672fc8';
         }
     };
@@ -4002,18 +4006,18 @@
         hideError();
 
         if (!phone || !password) {
-            showError('Please enter both student phone number and password.');
+            showError('من فضلك أدخل رقم هاتف الطالب وكلمة المرور.');
             return;
         }
 
         if (phone.length !== 11 || !phone.startsWith('01')) {
-            showError('Phone number must be exactly 11 digits starting with 01 (e.g. 01012345678). You entered ' + phone.length + ' digits.');
+            showError('يجب أن يكون رقم الهاتف 11 رقمًا بالضبط ويبدأ بـ 01 (مثال: 01012345678). أدخلت ' + phone.length + ' digits.');
             if (phoneInput) { phoneInput.classList.add('input-error'); phoneInput.focus(); }
             return;
         }
         if (phoneInput) phoneInput.classList.remove('input-error');
 
-        if (!window.AuthService) { showError('Authentication service is unavailable. Please reload the page.'); return; }
+        if (!window.AuthService) { showError('خدمة تسجيل الدخول غير متاحة. أعد تحميل الصفحة.'); return; }
 
         // التحقق كله من قاعدة البيانات/خدمة المصادقة: 1) الرقم مسجّل؟ 2) كلمة المرور؟ 3) إنشاء الجلسة
         if (submitBtn) submitBtn.disabled = true;
@@ -4031,7 +4035,7 @@
 
         loadSession();
         refreshLayout();
-        showToast('Welcome back, ' + currentUser.name + '! Signed in successfully 🎉', 'success');
+        showToast('مرحبًا بعودتك، ' + currentUser.name + '! تم تسجيل الدخول بنجاح 🎉', 'success');
         const redirect = sessionStorage.getItem('iraqiplatform_redirect');
         if (redirect) {
             sessionStorage.removeItem('iraqiplatform_redirect');
@@ -4066,44 +4070,44 @@
         hideError();
 
         if (!fullName || !phone || !parentPhone || !grade || !governorate || !password || !confirmPassword) {
-            showError('Please fill in all required fields to create your account.');
+            showError('من فضلك املأ كل الحقول المطلوبة لإنشاء حسابك.');
             return;
         }
 
         if (phone.length !== 11 || !phone.startsWith('01')) {
-            showError('Student phone number must be exactly 11 digits starting with 01 (e.g. 01012345678).');
+            showError('يجب أن يكون رقم هاتف الطالب 11 رقمًا ويبدأ بـ 01 (مثال: 01012345678).');
             if (phoneInput) { phoneInput.classList.add('input-error'); phoneInput.focus(); }
             return;
         }
 
         if (parentPhone.length !== 11 || !parentPhone.startsWith('01')) {
-            showError('Parent phone number must be exactly 11 digits starting with 01 (e.g. 01123456789).');
+            showError('يجب أن يكون رقم هاتف ولي الأمر 11 رقمًا ويبدأ بـ 01 (مثال: 01123456789).');
             if (parentPhoneInput) { parentPhoneInput.classList.add('input-error'); parentPhoneInput.focus(); }
             return;
         }
 
         if (phone === parentPhone) {
-            showError('Student phone and parent phone cannot be the same. Please provide two different numbers.');
+            showError('لا يمكن أن يتطابق رقم الطالب مع رقم ولي الأمر. أدخل رقمين مختلفين.');
             if (parentPhoneInput) { parentPhoneInput.classList.add('input-error'); parentPhoneInput.focus(); }
             return;
         }
 
         if ((grade === '2nd Year Secondary' || grade === 'ثانية ثانوي') && !section) {
-            showError('Please select your academic section (General or Baccalaureate).');
+            showError('اختر شعبتك الدراسية (عام أو بكالوريا).');
             return;
         }
 
         if (!validatePassword(password)) {
-            showError('Password must be at least 6 characters (English letters and numbers only).');
+            showError('يجب ألا تقل كلمة المرور عن 6 أحرف (حروف إنجليزية وأرقام فقط).');
             return;
         }
 
         if (password !== confirmPassword) {
-            showError('Password and confirmation password do not match.');
+            showError('كلمة المرور وتأكيدها غير متطابقين.');
             return;
         }
 
-        if (!window.AuthService) { showError('Authentication service is unavailable. Please reload the page.'); return; }
+        if (!window.AuthService) { showError('خدمة تسجيل الدخول غير متاحة. أعد تحميل الصفحة.'); return; }
         const gradeLabel = (grade === '2nd Year Secondary' || grade === 'ثانية ثانوي') && section ? grade + ' — ' + section : grade;
         const regBtn = document.getElementById('registerSubmitBtn');
         if (regBtn) regBtn.disabled = true;
@@ -4121,7 +4125,7 @@
         }
         loadSession();
         refreshLayout();
-        showToast('Welcome, ' + fullName + '! Account created successfully 🎉', 'success');
+        showToast('مرحبًا، ' + fullName + '! تم إنشاء الحساب بنجاح 🎉', 'success');
         const regRedirect = sessionStorage.getItem('iraqiplatform_redirect');
         if (regRedirect) {
             sessionStorage.removeItem('iraqiplatform_redirect');
@@ -4136,7 +4140,7 @@
         clearSession();
         refreshLayout();
         navigate('home');
-        showToast('Signed out successfully');
+        showToast('تم تسجيل الخروج بنجاح');
     };
 
     // Profile save
@@ -4147,25 +4151,25 @@
         const parentPhone = document.getElementById('profileParentPhone') ? document.getElementById('profileParentPhone').value.trim().replace(/[^0-9]/g, '') : '';
         const grade = document.getElementById('profileGrade') ? document.getElementById('profileGrade').value : '';
         const governorate = document.getElementById('profileGovernorate') ? document.getElementById('profileGovernorate').value : '';
-        if (!name) { showToast('Please enter your full name', 'error'); return; }
+        if (!name) { showToast('أدخل اسمك بالكامل', 'error'); return; }
         if (phone && (phone.length !== 11 || !phone.startsWith('01'))) {
-            showToast('Student phone must be 11 digits starting with 01', 'error');
+            showToast('يجب أن يكون هاتف الطالب 11 رقمًا يبدأ بـ 01', 'error');
             return;
         }
         if (parentPhone && (parentPhone.length !== 11 || !parentPhone.startsWith('01'))) {
-            showToast('Parent phone must be 11 digits starting with 01', 'error');
+            showToast('يجب أن يكون هاتف ولي الأمر 11 رقمًا يبدأ بـ 01', 'error');
             return;
         }
         // رقم الهاتف هو معرّف الدخول: لا يُغيَّر من المتصفح (يتم عبر الدعم)
         if (phone && currentUser.phone && phone !== currentUser.phone) {
-            showToast('Your phone number is your login ID and cannot be changed here. Please contact support.', 'error');
+            showToast('رقم هاتفك هو معرّف الدخول ولا يمكن تغييره من هنا. تواصل مع الدعم.', 'error');
             const pi = document.getElementById('profilePhone'); if (pi) pi.value = currentUser.phone;
             return;
         }
         window.AuthService.updateProfile({ name: name, parentPhone: parentPhone, grade: grade, governorate: governorate }).then(function (r) {
-            if (!r.ok) { showToast(r.message || 'Could not save your profile. Please try again.', 'error'); return; }
+            if (!r.ok) { showToast(r.message || 'تعذّر حفظ ملفك الشخصي. حاول مرة أخرى.', 'error'); return; }
             loadSession();
-            showToast('Profile updated successfully! ✅', 'success');
+            showToast('تم تحديث الملف الشخصي بنجاح! ✅', 'success');
             refreshLayout();
         });
     };
@@ -4176,13 +4180,13 @@
         const current = document.getElementById('currentPasswordInput') ? document.getElementById('currentPasswordInput').value : '';
         const newPw = document.getElementById('newPasswordInput') ? document.getElementById('newPasswordInput').value : '';
         const confirm = document.getElementById('confirmPasswordInput') ? document.getElementById('confirmPasswordInput').value : '';
-        if (!current) { showToast('Please enter your current password', 'error'); return; }
-        if (!validatePassword(newPw)) { showToast('New password must be at least 6 alphanumeric characters', 'error'); return; }
-        if (newPw !== confirm) { showToast('New password and confirmation do not match', 'error'); return; }
+        if (!current) { showToast('أدخل كلمة المرور الحالية', 'error'); return; }
+        if (!validatePassword(newPw)) { showToast('يجب ألا تقل كلمة المرور الجديدة عن 6 أحرف أو أرقام', 'error'); return; }
+        if (newPw !== confirm) { showToast('كلمة المرور الجديدة وتأكيدها غير متطابقين', 'error'); return; }
         // التحقق من كلمة المرور الحالية يتم على خدمة المصادقة (إعادة مصادقة) وليس بمقارنة نص محلي
         const r = await window.AuthService.changePassword(current, newPw);
-        if (!r.ok) { showToast(r.code === 'wrong_password' ? 'Current password is incorrect' : (r.message || 'Could not change the password'), 'error'); return; }
-        showToast('Password changed successfully! 🔒', 'success');
+        if (!r.ok) { showToast(r.code === 'wrong_password' ? 'كلمة المرور الحالية غير صحيحة' : (r.message || 'تعذّر تغيير كلمة المرور'), 'error'); return; }
+        showToast('تم تغيير كلمة المرور بنجاح! 🔒', 'success');
         ['currentPasswordInput', 'newPasswordInput', 'confirmPasswordInput'].forEach(function (id) { const el = document.getElementById(id); if (el) el.value = ''; });
     };
 
@@ -4324,7 +4328,7 @@
     function initCourseDetailsPage() { }
     function initLessonPage() {
         quizAnswers = {};
-        // إذا كانت صفحة الدرس تعرض "لا توجد دروس" → حاول تحديث من Firebase
+        // إذا كانت صفحة الدرس تعرض "لا توجد دروس" ← حاول تحديث من Firebase
         setTimeout(async function () {
             const noLessonMsg = document.querySelector('.lesson-content .video-placeholder, .lesson-content [style*="لا توجد"]');
             if (!noLessonMsg) return;
@@ -4667,7 +4671,7 @@
     window.openCourse = function (courseId) {
         if (!isLoggedIn) {
             sessionStorage.setItem('iraqiplatform_redirect', 'license/' + courseId);
-            showToast('Please sign in first to access this course', 'error');
+            showToast('سجّل الدخول أولًا للدخول إلى هذا الكورس', 'error');
             navigate('login');
             return;
         }
@@ -4694,7 +4698,7 @@
     window.openLesson = function (courseId, lessonId) {
         if (!isLoggedIn) {
             sessionStorage.setItem('iraqiplatform_redirect', 'lesson/' + courseId + '/' + lessonId);
-            showToast('Please sign in first to access this lesson', 'error');
+            showToast('سجّل الدخول أولًا للدخول إلى هذا الدرس', 'error');
             navigate('login');
             return;
         }
@@ -4703,7 +4707,7 @@
             return String(id) === String(courseId);
         });
         if (!course || (!course.isFree && !isEnrolled)) {
-            showToast('This course requires activation first', 'error');
+            showToast('هذا الكورس يحتاج إلى تفعيل أولًا', 'error');
             navigate('license/' + courseId);
             return;
         }
@@ -4715,21 +4719,21 @@
     // ═══════════════════════════════════════════════════════════
     function renderAuthRequiredPage(courseId) {
         var course = getAllCourses().find(function (c) { return String(c.id) === String(courseId); });
-        var courseTitle = course ? course.title : 'Selected Course';
+        var courseTitle = course ? course.title : 'الكورس المحدد';
         return '<div style="padding-top:calc(var(--header-height) + var(--space-3xl));padding-bottom:var(--space-3xl);min-height:80vh;display:flex;align-items:center;">' +
             '<div class="container">' +
             '<div class="reveal" style="max-width:520px;margin:0 auto;text-align:center;background:var(--bg-surface,#fff);border-radius:24px;padding:56px 40px;box-shadow:0 24px 64px rgba(0,0,0,.10);border:1px solid var(--border);">' +
             '<div style="font-size:64px;margin-bottom:20px;">🔐</div>' +
-            '<h2 style="font-size:1.6rem;font-weight:900;margin-bottom:12px;">Sign In Required</h2>' +
+            '<h2 style="font-size:1.6rem;font-weight:900;margin-bottom:12px;">تسجيل الدخول مطلوب</h2>' +
             '<div style="background:linear-gradient(135deg,#F5F0FC,#E7DDF7);border:1px solid #AD8DE4;border-radius:14px;padding:16px 20px;margin-bottom:28px;">' +
-            '<p style="margin:0;color:#5627A7;font-size:0.95rem;font-weight:600;">To access course: <span style="color:#1a1227;">' + courseTitle + '</span></p>' +
+            '<p style="margin:0;color:#5627A7;font-size:0.95rem;font-weight:600;">للدخول إلى الكورس:<span style="color:#1a1227;">' + courseTitle + '</span></p>' +
             '</div>' +
-            '<p style="color:var(--text-secondary);font-size:0.95rem;margin-bottom:32px;line-height:1.8;">Please sign in or create a free account to continue to your selected course.</p>' +
+            '<p style="color:var(--text-secondary);font-size:0.95rem;margin-bottom:32px;line-height:1.8;">سجّل الدخول أو أنشئ حسابًا مجانيًا لمتابعة الكورس الذي اخترته.</p>' +
             '<div style="display:flex;flex-direction:column;gap:12px;">' +
-            '<a href="#login" class="btn btn-primary btn-lg btn-block" onclick="sessionStorage.setItem(\'iraqiplatform_redirect\',\'license/' + courseId + '\')">🔑 Sign In</a>' +
-            '<a href="#register" class="btn btn-outline btn-lg btn-block" onclick="sessionStorage.setItem(\'iraqiplatform_redirect\',\'license/' + courseId + '\')">✨ Create Account</a>' +
+            '<a href="#login" class="btn btn-primary btn-lg btn-block" onclick="sessionStorage.setItem(\'iraqiplatform_redirect\',\'license/' + courseId + '\')">🔑 تسجيل الدخول</a>' +
+            '<a href="#register" class="btn btn-outline btn-lg btn-block" onclick="sessionStorage.setItem(\'iraqiplatform_redirect\',\'license/' + courseId + '\')">✨ إنشاء حساب</a>' +
             '</div>' +
-            '<div style="margin-top:20px;"><a href="#courses" style="color:var(--text-muted);font-size:0.85rem;">← Back to Courses</a></div>' +
+            '<div style="margin-top:20px;"><a href="#courses" style="color:var(--text-muted);font-size:0.85rem;">العودة للكورسات →</a></div>' +
             '</div>' +
             '</div>' +
             '</div>';

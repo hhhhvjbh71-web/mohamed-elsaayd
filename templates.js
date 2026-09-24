@@ -13,9 +13,9 @@ window.Templates = (function () {
             <div class="container">
                 <div class="empty-state">
                     <div class="empty-state-icon">🔍</div>
-                    <h3>Page Not Found</h3>
-                    <p>The page you are looking for does not exist or has been moved.</p>
-                    <a href="#home" class="btn btn-primary">Back to Home</a>
+                    <h3>الصفحة غير موجودة</h3>
+                    <p>الصفحة التي تبحث عنها غير موجودة أو تم نقلها.</p>
+                    <a href="#home" class="btn btn-primary">العودة للرئيسية</a>
                 </div>
             </div>
         </div>`;
@@ -27,9 +27,9 @@ window.Templates = (function () {
         <div style="min-height:80vh;display:flex;align-items:center;justify-content:center;padding:var(--space-2xl);">
             <div class="card" style="max-width:440px;width:100%;text-align:center;padding:var(--space-2xl);">
                 <div style="font-size:4rem;margin-bottom:var(--space-md);">🔐</div>
-                <h2 style="margin-bottom:var(--space-sm);">Sign In Required</h2>
+                <h2 style="margin-bottom:var(--space-sm);">تسجيل الدخول مطلوب</h2>
                 <p style="color:var(--text-secondary);margin-bottom:var(--space-xl);">
-                    To access this course content, please sign in or create a new account.
+                    للوصول إلى محتوى هذا الكورس، سجّل الدخول أو أنشئ حسابًا جديدًا.
                 </p>
                 <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
                     <a href="#login" class="btn btn-primary">تسجيل الدخول</a>
@@ -50,7 +50,7 @@ window.Templates = (function () {
         <div class="courses-filter-bar">
             <div class="filter-search">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="courseSearchInput" placeholder="Search for a course..."
+                <input type="text" id="courseSearchInput" placeholder="ابحث عن كورس..."
                     oninput="filterCourses()">
             </div>
             <div class="filter-chips" id="filterChips">
@@ -65,9 +65,9 @@ window.Templates = (function () {
         <div style="padding-top:calc(var(--header-height) + var(--space-2xl));padding-bottom:var(--space-3xl);">
             <div class="container">
                 <div class="text-center" style="margin-bottom:var(--space-2xl);">
-                    <span class="section-badge sb-blue"><span class="icon">📚</span> Courses</span>
-                    <h2 class="section-title">All Available Courses</h2>
-                    <p class="section-subtitle">Choose your grade level and explore courses available for you.</p>
+                    <span class="section-badge sb-blue"><span class="icon">📚</span> الكورسات</span>
+                    <h2 class="section-title">كل الكورسات المتاحة</h2>
+                    <p class="section-subtitle">اختر صفك الدراسي واستكشف الكورسات المتاحة لك.</p>
                 </div>
                 ${courseFilterBar(grades)}
                 <div class="courses-grid" id="coursesGrid">
@@ -75,8 +75,8 @@ window.Templates = (function () {
                 </div>
                 <div class="empty-state" id="coursesEmpty" style="display:none;">
                     <div class="empty-state-icon">🔍</div>
-                    <h3>No Results Found</h3>
-                    <p>Try changing your search keyword or grade filter.</p>
+                    <h3>لا توجد نتائج</h3>
+                    <p>جرّب تغيير كلمة البحث أو فلتر الصف.</p>
                 </div>
             </div>
         </div>`;
@@ -142,27 +142,27 @@ window.Templates = (function () {
         return `
         <section class="page-section" style="background:var(--bg-alt);">
             <div class="container text-center">
-                <span class="section-badge sb-teal"><span class="icon">🚀</span> Easy Start</span>
-                <h2 class="section-title">How to Start Your Journey in 3 Steps</h2>
-                <p class="section-subtitle">Simple and fast steps to get started in just a few minutes.</p>
+                <span class="section-badge sb-teal"><span class="icon">🚀</span> بداية سهلة</span>
+                <h2 class="section-title">كيف تبدأ رحلتك في 3 خطوات</h2>
+                <p class="section-subtitle">خطوات بسيطة وسريعة لتبدأ في دقائق معدودة.</p>
                 <div class="steps-grid">
                     <div class="step-card reveal">
                         <div class="step-badge">1</div>
                         <div class="step-icon">👤</div>
-                        <h3>Create Free Account</h3>
-                        <p>Register your name, phone number, and grade level in under a minute.</p>
+                        <h3>إنشاء حساب مجاني</h3>
+                        <p>سجّل اسمك ورقم هاتفك وصفك الدراسي في أقل من دقيقة.</p>
                     </div>
                     <div class="step-card reveal reveal-delay-1">
                         <div class="step-badge">2</div>
                         <div class="step-icon">🔑</div>
-                        <h3>Choose Your Course</h3>
-                        <p>Browse courses, start with the free foundation course, or activate your grade's course code.</p>
+                        <h3>اختر كورسك</h3>
+                        <p>تصفّح الكورسات وابدأ بالكورس التأسيسي المجاني أو فعّل كود كورس صفك الدراسي.</p>
                     </div>
                     <div class="step-card reveal reveal-delay-2">
                         <div class="step-badge">3</div>
                         <div class="step-icon">🏆</div>
-                        <h3>Learn, Practice &amp; Excel!</h3>
-                        <p>Watch lectures, solve exercises and online exams, and achieve the full mark.</p>
+                        <h3>تعلّم وتدرّب وتفوّق!</h3>
+                        <p>شاهد المحاضرات وحُلّ التمارين والاختبارات الإلكترونية وحقّق الدرجة النهائية.</p>
                     </div>
                 </div>
             </div>
@@ -181,21 +181,21 @@ window.Templates = (function () {
                         <div class="teacher-role-badge">أستاذ الفيزياء — المراحل الثانوية والإعدادية</div>
                     </div>
                     <div class="teacher-content">
-                        <span class="section-badge sb-volt"><span class="icon">⭐</span> Lead Instructor</span>
-                        <h2>Making Physics Clear, Intuitive &amp; Inspiring</h2>
+                        <span class="section-badge sb-volt"><span class="icon">⭐</span> المدرّس الرئيسي</span>
+                        <h2>نجعل الفيزياء واضحة وبديهية وملهمة</h2>
                         <p>
-                            "My core mission is not merely to teach formulas, but to build a scientific mindset that understands where the laws come from and how to apply them to solve the hardest problems with confidence. Over 15+ years, I have proudly guided thousands of students to top faculties and full marks."
+                            «رسالتي الأساسية ليست تدريس القوانين فحسب، بل بناء عقلية علمية تفهم من أين تأتي القوانين وكيف تُطبَّق لحلّ أصعب المسائل بثقة. على مدار أكثر من 15 عامًا، كان لي شرف توجيه آلاف الطلاب إلى أفضل الكليات والدرجات النهائية.»"
                         </p>
                         <div class="teacher-pills">
-                            <div class="teacher-pill"><span>🏆</span> 15+ Years Experience</div>
-                            <div class="teacher-pill"><span>🎯</span> Top Nationwide Ranks</div>
-                            <div class="teacher-pill"><span>⚛️</span> Exclusive Simplified Method</div>
-                            <div class="teacher-pill"><span>⚡</span> Personal Homework Follow-up</div>
+                            <div class="teacher-pill"><span>🏆</span> خبرة +15 عامًا</div>
+                            <div class="teacher-pill"><span>🎯</span> مراكز متقدمة على مستوى الجمهورية</div>
+                            <div class="teacher-pill"><span>⚛️</span> أسلوب مبسّط حصري</div>
+                            <div class="teacher-pill"><span>⚡</span> متابعة شخصية للواجبات</div>
                         </div>
                         <div style="display:flex;gap:12px;flex-wrap:wrap;">
-                            <a href="#courses" class="btn btn-primary btn-lg">Browse Courses &rarr;</a>
+                            <a href="#courses" class="btn btn-primary btn-lg">تصفّح الكورسات</a>
                             <a href="https://wa.me/201000000000" target="_blank" rel="noopener"
-                                class="btn btn-outline btn-lg">💬 Contact Dr. Mohamed</a>
+                                class="btn btn-outline btn-lg">💬 تواصل مع الأستاذ محمد</a>
                         </div>
                     </div>
                 </div>
@@ -220,9 +220,9 @@ window.Templates = (function () {
         return `
         <section class="page-section" id="faq-section">
             <div class="container text-center">
-                <span class="section-badge sb-cyan"><span class="icon">❓</span> Help &amp; Info</span>
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Everything you need to know about registration, course activation, and using the platform.</p>
+                <span class="section-badge sb-cyan"><span class="icon">❓</span> مساعدة ومعلومات</span>
+                <h2 class="section-title">الأسئلة الشائعة</h2>
+                <p class="section-subtitle">كل ما تحتاج معرفته عن التسجيل وتفعيل الكورسات واستخدام المنصة.</p>
                 <div class="faq-grid">
                     ${itemsHTML}
                 </div>
@@ -234,22 +234,22 @@ window.Templates = (function () {
     function ctaBanner(isLoggedIn) {
         const btnsHTML = isLoggedIn ? `
             <a href="#dashboard" class="btn btn-accent btn-xl reveal reveal-delay-2">
-                📊 Go to Dashboard &rarr;
+                📊 Go to Dashboard &larr;
             </a>
             <a href="#courses" class="btn btn-outline btn-xl reveal reveal-delay-2"
                 style="border-color:#fff;color:#fff;">📚 استكشف الكورسات</a>
         ` : `
             <a href="#register" class="btn btn-accent btn-xl reveal reveal-delay-2"
-                id="ctaBannerRegisterBtn">✨ Create Free Account Now &rarr;</a>
+                id="ctaBannerRegisterBtn">✨ أنشئ حسابك المجاني الآن &larr;</a>
             <a href="#login" class="btn btn-outline btn-xl reveal reveal-delay-2"
-                style="border-color:#fff;color:#fff;">🔑 Sign In</a>
+                style="border-color:#fff;color:#fff;">🔑 تسجيل الدخول</a>
         `;
 
         return `
         <section class="cta-section">
             <div class="container text-center">
                 <h2 class="reveal">جاهز للتفوق في الفيزياء مع الأستاذ محمد الصياد؟</h2>
-                <p class="reveal reveal-delay-1">Join thousands of students and experience an engaging learning journey that makes all the difference.</p>
+                <p class="reveal reveal-delay-1">انضم إلى آلاف الطلاب واستمتع برحلة تعلّم ممتعة تصنع الفارق.</p>
                 <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:var(--space-xl);">
                     ${btnsHTML}
                 </div>
@@ -260,32 +260,32 @@ window.Templates = (function () {
     // ── Login Page Template ──────────────────────────────────────
     function loginPage(siteName) {
         return `
-        <div class="auth-page">
+        <div class="auth-page auth-page--login">
             <div class="auth-visual">
                 <div class="auth-visual-mesh"></div>
                 <div class="auth-visual-content">
                     <div class="auth-teacher-badge">
+                        ${AUTH_ORBITS}
                         <img src="teacher-hero.webp?v=20260923" alt="الأستاذ محمد الصياد — أستاذ الفيزياء" class="auth-t-img" onerror="this.src='صورة المدرس الجديد.jpeg'">
                         <div class="auth-t-info">
-                            <div class="auth-t-crown">👑</div>
                             <div class="auth-t-name" dir="rtl">الأستاذ محمد الصياد</div>
-                            <div class="auth-t-sub" dir="rtl">أستاذ الفيزياء ⚛️</div>
+                            <div class="auth-t-sub" dir="rtl">أستاذ الفيزياء</div>
                         </div>
                     </div>
-                    <h2 class="auth-visual-title">Welcome Back to Physics Excellence! ⚛️</h2>
-                    <p class="auth-visual-desc">Sign in to continue your journey toward the full mark with الأستاذ محمد الصياد.</p>
+                    <h2 class="auth-visual-title">مرحبًا بعودتك إلى التفوق في الفيزياء!</h2>
+                    <p class="auth-visual-desc">سجّل الدخول لتواصل رحلتك نحو الدرجة النهائية مع الأستاذ محمد الصياد.</p>
                     <div class="auth-features-list">
                         <div class="auth-feat-item">
-                            <span class="auth-feat-icon">📚</span>
-                            <span>Instant access to all your active courses</span>
+                            <span class="auth-feat-icon">${AUTH_ICONS.check}</span>
+                            <span>وصول فوري إلى كل كورساتك المفعّلة</span>
                         </div>
                         <div class="auth-feat-item">
-                            <span class="auth-feat-icon">📊</span>
-                            <span>Track your progress and test scores in real time</span>
+                            <span class="auth-feat-icon">${AUTH_ICONS.check}</span>
+                            <span>تابع تقدمك ودرجاتك لحظة بلحظة</span>
                         </div>
                         <div class="auth-feat-item">
-                            <span class="auth-feat-icon">🔔</span>
-                            <span>Instant notifications on new lessons and curriculum updates</span>
+                            <span class="auth-feat-icon">${AUTH_ICONS.check}</span>
+                            <span>إشعارات فورية بالدروس الجديدة وتحديثات المنهج</span>
                         </div>
                     </div>
                 </div>
@@ -299,7 +299,7 @@ window.Templates = (function () {
                             <span class="auth-logo-text">${siteName}</span>
                         </a>
                         <h1 class="auth-heading">تسجيل الدخول</h1>
-                        <p class="auth-subtitle">Enter your registered phone number and password to continue</p>
+                        <p class="auth-subtitle">مرحبًا بعودتك، تابع رحلتك التعليمية</p>
                     </div>
 
                     <div id="loginErrorMsg" class="auth-alert-error" style="display:none;"></div>
@@ -308,11 +308,11 @@ window.Templates = (function () {
                         id="loginForm" novalidate>
                         <div class="form-group">
                             <div class="form-label-row">
-                                <label class="form-label">📱 Student Phone Number</label>
-                                <span class="phone-len-counter" id="loginPhoneCounter">0 / 11 digits</span>
+                                <label class="form-label">رقم هاتف الطالب</label>
+                                <span class="phone-len-counter" id="loginPhoneCounter">0 / 11 رقمًا</span>
                             </div>
                             <div class="form-input-icon-wrapper">
-                                <span class="form-input-icon">📱</span>
+                                <span class="form-input-icon">${AUTH_ICONS.phone}</span>
                                 <input type="tel" class="form-input phone-input"
                                     placeholder="01xxxxxxxxx" required id="loginPhone"
                                     dir="ltr" maxlength="11" inputmode="numeric"
@@ -320,44 +320,44 @@ window.Templates = (function () {
                                     oninput="handlePhoneInputLive(this, 'loginPhoneCounter')">
                             </div>
                             <div class="form-hint" id="loginPhoneHint">
-                                Must enter 11 digits starting with 01 (numbers only)
+                                أدخل 11 رقمًا يبدأ بـ 01 (أرقام فقط)
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="form-label-row">
-                                <label class="form-label">🔒 Password</label>
+                                <label class="form-label">كلمة المرور</label>
                                 <a href="#" onclick="event.preventDefault();
-                                    showToast('Contact technical support to reset your password', 'info');"
-                                    class="forgot-pw-link">Forgot password?</a>
+                                    showToast('تواصل مع الدعم الفني لاستعادة كلمة المرور', 'info');"
+                                    class="forgot-pw-link">نسيت كلمة المرور؟</a>
                             </div>
                             <div class="form-input-icon-wrapper" style="position:relative;">
-                                <span class="form-input-icon">🔒</span>
+                                <span class="form-input-icon">${AUTH_ICONS.lock}</span>
                                 <input type="password" class="form-input"
-                                    placeholder="Enter your password" required id="loginPassword"
+                                    placeholder="أدخل كلمة المرور" required id="loginPassword"
                                     autocomplete="current-password">
                                 <span class="password-toggle"
                                     onclick="togglePassword('loginPassword', this)"
-                                    title="Show/Hide Password">👁️</span>
+                                    title="إظهار/إخفاء كلمة المرور">${AUTH_ICONS.eye}</span>
                             </div>
                         </div>
 
                         <div class="form-options-row">
                             <label class="remember-label">
                                 <input type="checkbox" checked class="custom-checkbox" id="loginRemember">
-                                <span>Remember me on this device</span>
+                                <span>تذكّرني على هذا الجهاز</span>
                             </label>
                         </div>
 
                         <button type="submit" class="btn btn-auth-submit" id="loginSubmitBtn">
                             <span>تسجيل الدخول</span>
-                            <span class="btn-arrow-icon">→</span>
+                            <span class="btn-arrow-icon">←</span>
                         </button>
                     </form>
 
                     <div class="auth-footer-box">
-                        <span>Don't have an account yet?</span>
-                        <a href="#register" class="auth-switch-link">Create Account Free ✨</a>
+                        <span>ليس لديك حساب؟</span>
+                        <a href="#register" class="auth-switch-link">إنشاء حساب</a>
                     </div>
                 </div>
             </div>
@@ -373,35 +373,35 @@ window.Templates = (function () {
             'Sharkia', 'South Sinai', 'Kafr El Sheikh', 'Matrouh', 'Luxor', 'Qena',
             'North Sinai', 'Sohag', 'Red Sea'
         ];
-        const govOptions = governorates.map(g => `<option>${g}</option>`).join('');
+        const govOptions = governorates.map(g => `<option value="${g}">${GOV_AR[g] || g}</option>`).join('');
 
         return `
-        <div class="auth-page">
+        <div class="auth-page auth-page--register">
             <div class="auth-visual">
                 <div class="auth-visual-mesh"></div>
                 <div class="auth-visual-content">
                     <div class="auth-teacher-badge">
+                        ${AUTH_ORBITS}
                         <img src="teacher-hero.webp?v=20260923" alt="الأستاذ محمد الصياد — أستاذ الفيزياء" class="auth-t-img" onerror="this.src='صورة المدرس الجديد.jpeg'">
                         <div class="auth-t-info">
-                            <div class="auth-t-crown">👑</div>
                             <div class="auth-t-name" dir="rtl">الأستاذ محمد الصياد</div>
-                            <div class="auth-t-sub" dir="rtl">أستاذ الفيزياء ⚛️</div>
+                            <div class="auth-t-sub" dir="rtl">أستاذ الفيزياء</div>
                         </div>
                     </div>
-                    <h2 class="auth-visual-title">Join the Physics Achievers! 🎓</h2>
-                    <p class="auth-visual-desc">Create your free account in seconds and get access to exclusive lessons and interactive exams.</p>
+                    <h2 class="auth-visual-title">انضم إلى المتفوقين في الفيزياء!</h2>
+                    <p class="auth-visual-desc">أنشئ حسابك المجاني في ثوانٍ واحصل على دروس حصرية واختبارات تفاعلية.</p>
                     <div class="auth-features-list">
                         <div class="auth-feat-item">
-                            <span class="auth-feat-icon">✨</span>
-                            <span>Clear, structured explanations of challenging topics</span>
+                            <span class="auth-feat-icon">${AUTH_ICONS.check}</span>
+                            <span>شروحات واضحة ومنظّمة للموضوعات الصعبة</span>
                         </div>
                         <div class="auth-feat-item">
-                            <span class="auth-feat-icon">🎯</span>
-                            <span>Comprehensive exams with instant grading &amp; model answers</span>
+                            <span class="auth-feat-icon">${AUTH_ICONS.check}</span>
+                            <span>اختبارات شاملة بتصحيح فوري وإجابات نموذجية</span>
                         </div>
                         <div class="auth-feat-item">
-                            <span class="auth-feat-icon">📊</span>
-                            <span>Periodic performance tracking and progress reports</span>
+                            <span class="auth-feat-icon">${AUTH_ICONS.check}</span>
+                            <span>متابعة دورية للأداء وتقارير التقدم</span>
                         </div>
                     </div>
                 </div>
@@ -415,7 +415,7 @@ window.Templates = (function () {
                             <span class="auth-logo-text">${siteName}</span>
                         </a>
                         <h1 class="auth-heading">إنشاء حساب</h1>
-                        <p class="auth-subtitle">Fill in your details to join the platform</p>
+                        <p class="auth-subtitle">أنشئ حسابك وانضم إلى المنصة</p>
                     </div>
 
                     <div id="registerErrorMsg" class="auth-alert-error" style="display:none;"></div>
@@ -424,13 +424,13 @@ window.Templates = (function () {
                         onsubmit="event.preventDefault(); handleRegister();"
                         id="registerForm" novalidate>
 
-                        <!-- Full Name -->
+                        <!-- الاسم بالكامل
                         <div class="form-group">
-                            <label class="form-label">👤 Student Full Name</label>
+                            <label class="form-label">اسم الطالب بالكامل</label>
                             <div class="form-input-icon-wrapper">
-                                <span class="form-input-icon">👤</span>
+                                <span class="form-input-icon">${AUTH_ICONS.user}</span>
                                 <input type="text" class="form-input"
-                                    placeholder="e.g. Ahmed Mohamed Ali"
+                                    placeholder="مثال: أحمد محمد علي"
                                     required id="registerFullName" autocomplete="name">
                             </div>
                         </div>
@@ -439,11 +439,11 @@ window.Templates = (function () {
                         <div class="form-row-auth">
                             <div class="form-group">
                                 <div class="form-label-row">
-                                    <label class="form-label">📱 Student Phone</label>
-                                    <span class="phone-len-counter" id="regPhoneCounter">0 / 11 digits</span>
+                                    <label class="form-label">رقم هاتف الطالب</label>
+                                    <span class="phone-len-counter" id="regPhoneCounter">0 / 11 رقمًا</span>
                                 </div>
                                 <div class="form-input-icon-wrapper">
-                                    <span class="form-input-icon">📱</span>
+                                    <span class="form-input-icon">${AUTH_ICONS.phone}</span>
                                     <input type="tel" class="form-input phone-input"
                                         placeholder="01xxxxxxxxx" required dir="ltr"
                                         id="registerPhone" maxlength="11" inputmode="numeric"
@@ -453,11 +453,11 @@ window.Templates = (function () {
                             </div>
                             <div class="form-group">
                                 <div class="form-label-row">
-                                    <label class="form-label">📞 Parent Phone</label>
-                                    <span class="phone-len-counter" id="regParentPhoneCounter">0 / 11 digits</span>
+                                    <label class="form-label">رقم هاتف ولي الأمر</label>
+                                    <span class="phone-len-counter" id="regParentPhoneCounter">0 / 11 رقمًا</span>
                                 </div>
                                 <div class="form-input-icon-wrapper">
-                                    <span class="form-input-icon">📞</span>
+                                    <span class="form-input-icon">${AUTH_ICONS.phone}</span>
                                     <input type="tel" class="form-input phone-input"
                                         placeholder="01xxxxxxxxx" required dir="ltr"
                                         id="registerParentPhone" maxlength="11" inputmode="numeric"
@@ -470,28 +470,28 @@ window.Templates = (function () {
                         <!-- Grade & Governorate -->
                         <div class="form-row-auth">
                             <div class="form-group">
-                                <label class="form-label">🎓 Grade Level</label>
+                                <label class="form-label">الصف الدراسي</label>
                                 <select class="form-select" id="registerGrade" required
                                     onchange="handleGradeChange(this.value)">
-                                    <option value="">— Select Grade —</option>
-                                    <optgroup label="Secondary Stage">
-                                        <option value="تالتة ثانوي">3rd Year Secondary</option>
-                                        <option value="تانية ثانوي">2nd Year Secondary</option>
-                                        <option value="تانية ثانوي برمجة">2nd Year Secondary (Programming)</option>
-                                        <option value="بكالوريا عام برمجة">General Baccalaureate (Programming)</option>
-                                        <option value="أولى ثانوي">1st Year Secondary</option>
+                                    <option value="">— اختر الصف —</option>
+                                    <optgroup label="المرحلة الثانوية">
+                                        <option value="تالتة ثانوي">الصف الثالث الثانوي</option>
+                                        <option value="تانية ثانوي">الصف الثاني الثانوي</option>
+                                        <option value="تانية ثانوي برمجة">الصف الثاني الثانوي (برمجة)</option>
+                                        <option value="بكالوريا عام برمجة">بكالوريا عام (برمجة)</option>
+                                        <option value="أولى ثانوي">الصف الأول الثانوي</option>
                                     </optgroup>
-                                    <optgroup label="Preparatory Stage">
-                                        <option value="تالتة إعدادي">3rd Year Preparatory</option>
-                                        <option value="تانية إعدادي">2nd Year Preparatory</option>
-                                        <option value="أولى إعدادي">1st Year Preparatory</option>
+                                    <optgroup label="المرحلة الإعدادية">
+                                        <option value="تالتة إعدادي">الصف الثالث الإعدادي</option>
+                                        <option value="تانية إعدادي">الصف الثاني الإعدادي</option>
+                                        <option value="أولى إعدادي">الصف الأول الإعدادي</option>
                                     </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">📍 Governorate</label>
+                                <label class="form-label">المحافظة</label>
                                 <select class="form-select" id="registerGovernorate" required>
-                                    <option value="">— Select Governorate —</option>
+                                    <option value="">— اختر المحافظة —</option>
                                     ${govOptions}
                                 </select>
                             </div>
@@ -499,17 +499,17 @@ window.Templates = (function () {
 
                         <!-- Section (For 2nd secondary) -->
                         <div class="form-group" id="sectionGroup" style="display:none;">
-                            <label class="form-label">🔬 Choose Section</label>
+                            <label class="form-label">اختر الشعبة</label>
                             <div class="section-radio-pills">
                                 <label class="radio-pill-card">
                                     <input type="radio" name="registerSection"
                                         value="عام" id="sectionAmm">
-                                    <span>📖 General (Scientific / Literary)</span>
+                                    <span>عام (علمي / أدبي)</span>
                                 </label>
                                 <label class="radio-pill-card">
                                     <input type="radio" name="registerSection"
                                         value="بكالوريا" id="sectionBak">
-                                    <span>🎓 International / Languages Baccalaureate</span>
+                                    <span>بكالوريا دولية / لغات</span>
                                 </label>
                             </div>
                         </div>
@@ -517,17 +517,17 @@ window.Templates = (function () {
                         <!-- Password -->
                         <div class="form-row-auth">
                             <div class="form-group">
-                                <label class="form-label">🔒 Password
-                                    <small>(6+ characters)</small></label>
+                                <label class="form-label">كلمة المرور
+                                    <small>(6 أحرف أو أكثر)</small></label>
                                 <div class="form-input-icon-wrapper" style="position:relative;">
-                                    <span class="form-input-icon">🔒</span>
+                                    <span class="form-input-icon">${AUTH_ICONS.lock}</span>
                                     <input type="password" class="form-input"
-                                        placeholder="Enter password" required
+                                        placeholder="أدخل كلمة المرور" required
                                         id="registerPassword"
                                         oninput="checkPasswordStrength(this.value)"
                                         autocomplete="new-password">
                                     <span class="password-toggle"
-                                        onclick="togglePassword('registerPassword', this)">👁️</span>
+                                        onclick="togglePassword('registerPassword', this)">${AUTH_ICONS.eye}</span>
                                 </div>
                                 <div class="password-strength-bar" id="passwordStrengthBar"
                                     style="margin-top:6px;height:4px;border-radius:4px;
@@ -540,15 +540,15 @@ window.Templates = (function () {
                                     style="font-size:0.75rem;margin-top:4px;"></div>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">🔒 Confirm Password</label>
+                                <label class="form-label">تأكيد كلمة المرور</label>
                                 <div class="form-input-icon-wrapper" style="position:relative;">
-                                    <span class="form-input-icon">🔒</span>
+                                    <span class="form-input-icon">${AUTH_ICONS.lock}</span>
                                     <input type="password" class="form-input"
-                                        placeholder="Repeat password" required
+                                        placeholder="أعد كتابة كلمة المرور" required
                                         id="registerConfirmPassword"
                                         autocomplete="new-password">
                                     <span class="password-toggle"
-                                        onclick="togglePassword('registerConfirmPassword', this)">👁️</span>
+                                        onclick="togglePassword('registerConfirmPassword', this)">${AUTH_ICONS.eye}</span>
                                 </div>
                             </div>
                         </div>
@@ -558,23 +558,23 @@ window.Templates = (function () {
                             <label class="remember-label">
                                 <input type="checkbox" required class="custom-checkbox"
                                     id="registerTerms" checked>
-                                <span>I agree to the
+                                <span>أوافق على
                                     <a href="#" onclick="event.preventDefault();
-                                        showToast('Terms ensure full privacy and security of your data', 'info');"
-                                        class="auth-link-terms">Terms of Service &amp; Privacy Policy</a>
+                                        showToast('الشروط تضمن الخصوصية الكاملة وأمان بياناتك', 'info');"
+                                        class="auth-link-terms">شروط الخدمة وسياسة الخصوصية</a>
                                 </span>
                             </label>
                         </div>
 
                         <button type="submit" class="btn btn-auth-submit" id="registerSubmitBtn">
-                            <span>Create Account Now</span>
+                            <span>إنشاء حساب الآن ✨</span>
                             <span class="btn-arrow-icon">✨</span>
                         </button>
                     </form>
 
                     <div class="auth-footer-box">
-                        <span>Already have an account?</span>
-                        <a href="#login" class="auth-switch-link">Sign in directly →</a>
+                        <span>لديك حساب بالفعل؟</span>
+                        <a href="#login" class="auth-switch-link">تسجيل الدخول</a>
                     </div>
                 </div>
             </div>
@@ -594,11 +594,11 @@ window.Templates = (function () {
                     <p>${config.description}</p>
                     <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;">
                         <span class="badge badge-primary">Class of ${year}</span>
-                        <span class="badge badge-accent">Foundation &amp; Comprehensive Content</span>
+                        <span class="badge badge-accent">محتوى تأسيسي وشامل</span>
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
+                    <h4>روابط سريعة</h4>
                     <a href="#home">الرئيسية</a>
                     <a href="#courses">كل الكورسات</a>
                     <a href="#home" onclick="scrollToSection('courses-section')">الكورسات</a>
@@ -608,31 +608,31 @@ window.Templates = (function () {
                         : '<a href="#profile">ملفي الشخصي</a>'}
                 </div>
                 <div class="footer-col">
-                    <h4>Grade Levels</h4>
-                    <a href="#courses" onclick="filterHomeStage('تالتة ثانوي')">3rd Year Secondary</a>
-                    <a href="#courses" onclick="filterHomeStage('تانية ثانوي')">2nd Year Secondary</a>
-                    <a href="#courses" onclick="filterHomeStage('أولى ثانوي')">1st Year Secondary</a>
-                    <a href="#courses" onclick="filterHomeStage('بكالوريا عام برمجة')">Baccalaureate Programming</a>
-                    <a href="#courses" onclick="filterHomeStage('أولى إعدادي')">1st Year Preparatory</a>
-                    <a href="#courses" onclick="filterHomeStage('تانية إعدادي')">2nd Year Preparatory</a>
-                    <a href="#courses" onclick="filterHomeStage('تالتة إعدادي')">3rd Year Preparatory</a>
-                    <a href="#courses" onclick="filterHomeStage('مجاني')">Free Courses 🎁</a>
+                    <h4>المراحل الدراسية</h4>
+                    <a href="#courses" onclick="filterHomeStage('تالتة ثانوي')">الصف الثالث الثانوي</a>
+                    <a href="#courses" onclick="filterHomeStage('تانية ثانوي')">الصف الثاني الثانوي</a>
+                    <a href="#courses" onclick="filterHomeStage('أولى ثانوي')">الصف الأول الثانوي</a>
+                    <a href="#courses" onclick="filterHomeStage('بكالوريا عام برمجة')">بكالوريا برمجة</a>
+                    <a href="#courses" onclick="filterHomeStage('أولى إعدادي')">الصف الأول الإعدادي</a>
+                    <a href="#courses" onclick="filterHomeStage('تانية إعدادي')">الصف الثاني الإعدادي</a>
+                    <a href="#courses" onclick="filterHomeStage('تالتة إعدادي')">الصف الثالث الإعدادي</a>
+                    <a href="#courses" onclick="filterHomeStage('مجاني')">كورسات مجانية 🎁</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <a href="https://wa.me/201000000000" target="_blank" rel="noopener">📱 WhatsApp Support</a>
-                    <a href="#" target="_blank" rel="noopener">💬 Telegram Channel</a>
-                    <a href="#" target="_blank" rel="noopener">📘 Facebook Page</a>
-                    <a href="#login">🔑 Student Login</a>
+                    <h4>تواصل معنا</h4>
+                    <a href="https://wa.me/201000000000" target="_blank" rel="noopener">📱 دعم واتساب</a>
+                    <a href="#" target="_blank" rel="noopener">💬 قناة تيليجرام</a>
+                    <a href="#" target="_blank" rel="noopener">📘 صفحة فيسبوك</a>
+                    <a href="#login">🔑 دخول الطالب</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>&copy; ${year} ${config.fullName}. All rights reserved.</span>
+                <span>&copy; ${year} ${config.fullName}. جميع الحقوق محفوظة.</span>
                 <div class="footer-social">
                     <a href="https://wa.me/201000000000" target="_blank" rel="noopener"
-                        aria-label="WhatsApp" title="WhatsApp">💬</a>
-                    <a href="#" aria-label="Telegram" title="Telegram">✈️</a>
-                    <a href="#" aria-label="Facebook" title="Facebook">📘</a>
+                        aria-label="واتساب" title="واتساب">💬</a>
+                    <a href="#" aria-label="تيليجرام" title="تيليجرام">✈️</a>
+                    <a href="#" aria-label="فيسبوك" title="فيسبوك">📘</a>
                 </div>
             </div>
         </div>`;

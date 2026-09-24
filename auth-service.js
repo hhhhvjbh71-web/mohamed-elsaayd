@@ -28,20 +28,20 @@
     var ADMIN_CACHE_KEY = 'alsaqr_current_user';    // كاش جلسة لوحة التحكم (للعرض فقط)
 
     var MESSAGES = {
-        phone_not_registered: 'رقم الهاتف غير مسجل — This phone number is not registered.',
-        wrong_password: 'كلمة المرور غير صحيحة — Incorrect password.',
-        invalid_phone: 'رقم الهاتف يجب أن يكون 11 رقمًا ويبدأ بـ 01 — Phone must be 11 digits starting with 01.',
-        invalid_input: 'من فضلك أدخل رقم الهاتف وكلمة المرور — Please enter your phone number and password.',
-        account_missing: 'الحساب غير مفعّل بعد. تواصل مع الدعم — Account is not activated yet. Please contact support.',
-        profile_missing: 'بيانات الحساب غير مكتملة. تواصل مع الدعم — Account data is incomplete. Please contact support.',
-        too_many_attempts: 'محاولات كثيرة. حاول لاحقًا — Too many attempts. Please try again later.',
-        network: 'تعذّر الاتصال بالخادم. تحقق من الإنترنت وحاول مرة أخرى — Could not reach the server. Check your connection.',
-        disabled: 'هذا الحساب موقوف. تواصل مع الدعم — This account is disabled. Please contact support.',
-        phone_taken: 'رقم الهاتف مسجل بالفعل. سجّل الدخول بدلًا من ذلك — This phone number is already registered.',
-        weak_password: 'كلمة المرور ضعيفة (6 أحرف/أرقام على الأقل) — Password is too weak (min 6 characters).',
-        not_admin: 'هذا الحساب ليس حساب مدرس/أدمن — This account is not an administrator.',
-        unknown: 'حدث خطأ غير متوقع. حاول مرة أخرى — Something went wrong. Please try again.',
-        setup: 'الخدمة غير مهيأة بعد. تواصل مع الدعم — Service is not configured yet. Please contact support.'
+        phone_not_registered: 'رقم الهاتف غير مسجل',
+        wrong_password: 'كلمة المرور غير صحيحة',
+        invalid_phone: 'رقم الهاتف يجب أن يكون 11 رقمًا ويبدأ بـ 01',
+        invalid_input: 'من فضلك أدخل رقم الهاتف وكلمة المرور',
+        account_missing: 'الحساب غير مفعّل بعد. تواصل مع الدعم',
+        profile_missing: 'بيانات الحساب غير مكتملة. تواصل مع الدعم',
+        too_many_attempts: 'محاولات كثيرة. حاول لاحقًا',
+        network: 'تعذّر الاتصال بالخادم. تحقق من الإنترنت وحاول مرة أخرى',
+        disabled: 'هذا الحساب موقوف. تواصل مع الدعم',
+        phone_taken: 'رقم الهاتف مسجل بالفعل. سجّل الدخول بدلًا من ذلك',
+        weak_password: 'كلمة المرور ضعيفة (6 أحرف/أرقام على الأقل)',
+        not_admin: 'هذا الحساب ليس حساب مدرس/أدمن',
+        unknown: 'حدث خطأ غير متوقع. حاول مرة أخرى',
+        setup: 'الخدمة غير مهيأة بعد. تواصل مع الدعم'
     };
 
     var state = { user: null, admin: false, verified: false, ready: false, uid: null };

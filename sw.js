@@ -32,7 +32,7 @@
 'use strict';
 
 // ⚠️ هذا السطر يتحدّث تلقائيًا مع كل تشغيل لسكربت update-version.*
-const APP_VERSION = '20260923-2153';
+const APP_VERSION = '20260924-0316';
 
 const STATIC_CACHE  = 'manassa-static-'  + APP_VERSION;
 const RUNTIME_CACHE = 'manassa-runtime-' + APP_VERSION;

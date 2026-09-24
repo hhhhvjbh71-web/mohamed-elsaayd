@@ -71,7 +71,7 @@
          PWA — تطبيق ويب تقدمي (Progressive Web App)
          منصة الأستاذ محمد الصياد
          ═══════════════════════════════════════════════════════════ -->
-  <link rel="manifest" href="manifest.json?v=20260923-2153">
+  <link rel="manifest" href="manifest.json?v=20260924-0316">
   <meta name="theme-color" content="#1D1038">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -81,7 +81,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="pwa-install.css?v=20260923-2153">
+  <link rel="stylesheet" href="pwa-install.css?v=20260924-0316">
 
   <link rel="preload" as="image" href="teacher-hero.webp?v=20260923" type="image/webp" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,7 +98,7 @@
     })();
   </script>
 
-  <link rel="stylesheet" href="style.css?v=20260923-2153">
+  <link rel="stylesheet" href="style.css?v=20260924-0316">
 
   <!-- ═══════════════════════════════════════════════════════════
          شاشة التحميل — منصة الأستاذ محمد الصياد | أستاذ الفيزياء
@@ -303,33 +303,33 @@
          ════════════════════════════════════════════════ -->
 
   <!-- 1. إعداد Firebase -->
-  <script src="firebase-config.js?v=20260923-2153"></script>
-  <script src="firebase-service.js?v=20260923-2153"></script>
+  <script src="firebase-config.js?v=20260924-0316"></script>
+  <script src="firebase-service.js?v=20260924-0316"></script>
   <!-- نظام المصادقة الوحيد: Firebase Auth + قاعدة البيانات (يُحمَّل قبل data.js وapp.js) -->
-  <script src="auth-service.js?v=20260923-2153"></script>
+  <script src="auth-service.js?v=20260924-0316"></script>
 
   <!-- 2. البيانات والمنطق المشترك -->
-  <script src="data.js?v=20260923-2153"></script>
+  <script src="data.js?v=20260924-0316"></script>
 
   <!-- 3. قوالب HTML — مفصولة عن المنطق -->
-  <script src="templates.js?v=20260923-2153"></script>
+  <script src="templates.js?v=20260924-0316"></script>
 
   <!-- 4. الجسر مع الداشبورد -->
-  <script src="dashboard-bridge.js?v=20260923-2153"></script>
+  <script src="dashboard-bridge.js?v=20260924-0316"></script>
   <!-- 4b. نظام الاختبارات (محاولات Firestore + واجهة الطالب) — بعد الـ bridge وقبل app.js -->
-  <script src="quiz-service.js?v=20260923-2153"></script>
-  <script src="quiz-ui.js?v=20260923-2153"></script>
+  <script src="quiz-service.js?v=20260924-0316"></script>
+  <script src="quiz-ui.js?v=20260924-0316"></script>
 
   <!-- 5. التطبيق الرئيسي -->
-  <script src="app.js?v=20260923-2153"></script>
+  <script src="app.js?v=20260924-0316"></script>
 
   <!-- 6. Cache Busting — يجب أن يكون آخر script -->
   <!-- يتحقق تلقائياً من version.json ويُعيد التحميل عند وجود تحديث -->
-  <script src="cache-buster.js?v=20260923-2153"></script>
+  <script src="cache-buster.js?v=20260924-0316"></script>
 
   <!-- 7. PWA — تسجيل Service Worker + نافذة تثبيت التطبيق -->
   <!-- إضافة مستقلة، لا تتدخل في أي كود سابق -->
-  <script src="pwa-install.js?v=20260923-2153"></script>
+  <script src="pwa-install.js?v=20260924-0316"></script>
 
   <!-- ═══════════════════════════════════════════════════════════
          زر لوحة التحكم + نافذة دخول الأدمن (هاتف + كلمة مرور — تُفحص من Firebase)
@@ -552,15 +552,15 @@
   <div id="dashPwOverlay" onclick="if(event.target===this)closeDashModal()">
     <div id="dashPwModal">
       <div class="pw-icon">🔐</div>
-      <h3>Platform Control Panel</h3>
-      <p>Sign in with your administrator account to open the control panel</p>
+      <h3>لوحة تحكم المنصة</h3>
+      <p>سجّل الدخول بحساب المسؤول لفتح لوحة التحكم</p>
       <input type="tel" id="dashPhoneInput" placeholder="01xxxxxxxxx" maxlength="11" inputmode="numeric" autocomplete="username" dir="ltr"
         onkeydown="if(event.key==='Enter')document.getElementById('dashPwInput').focus()">
       <input type="password" id="dashPwInput" placeholder="••••••" maxlength="64" autocomplete="current-password"
         onkeydown="if(event.key==='Enter')verifyDashPw()">
-      <div id="dashPwErr">❌ Incorrect phone number or password.</div>
-      <button id="dashPwSubmit" onclick="verifyDashPw()">Enter Dashboard →</button>
-      <button id="dashPwCancel" onclick="closeDashModal()">Cancel</button>
+      <div id="dashPwErr">❌ رقم الهاتف أو كلمة المرور غير صحيحة.</div>
+      <button id="dashPwSubmit" onclick="verifyDashPw()">دخول لوحة التحكم ←</button>
+      <button id="dashPwCancel" onclick="closeDashModal()">إلغاء</button>
     </div>
   </div>
 
