@@ -7949,3 +7949,50 @@ html[dir="rtl"] .hb-btns { flex-direction: row; }
 .auth-form .form-label-row .form-label, .auth-form .phone-len-counter { white-space: nowrap; }
 .auth-logo-text { color: var(--au-ink); font-weight: 800; } [data-theme="dark"] .auth-logo-text { color: #E3D6FF; }
 @media (max-width: 1024px) { .auth-visual { margin: 0; } }
+
+/* ═════════ HERO v4 — ألوان ثانوية (سيان + عنبري) + إصلاحات: المعادلات، قص الصورة، الزرار فوق الطية ═════════
+   كل التعديلات في هذا البلوك فقط (آخر الملف). للتراجع: احذف من هذا التعليق إلى نهاية الملف. */
+.hb-section {
+  --hb-spark: #FFB627; --hb-spark-ink: #2E1A55; --hb-spark-text: #92400E;
+  --hb-cy-text: #0E7490; --hb-rim: rgba(14,165,206,.30);
+  --hb-cta-bg: linear-gradient(135deg, #6A3FBD 0%, #5B33A8 100%); --hb-cta-c: #FFFFFF;
+  --hb-cta-sh: 0 10px 24px rgba(91,51,168,.34);
+  --hb-cta-hsh: 0 14px 30px rgba(91,51,168,.42), 0 0 0 4px rgba(106,63,189,.16);
+}
+[data-theme="dark"] .hb-section {
+  --hb-spark-text: #FFB627; --hb-cy-text: #5CE1F6; --hb-rim: rgba(92,225,246,.50);
+  --hb-cta-bg: linear-gradient(135deg, #FFC94D 0%, #F59E0B 100%); --hb-cta-c: #2E1A55;
+  --hb-cta-sh: 0 12px 28px rgba(245,158,11,.30);
+  --hb-cta-hsh: 0 16px 34px rgba(245,158,11,.40), 0 0 0 4px rgba(255,182,39,.18);
+}
+/* المعادلات: اتجاه LTR عشان ∑F = 0 ما تنعكسش داخل صفحة RTL */
+.hb-section .hb-float { direction: ltr; unicode-bidi: isolate; }
+/* زرار الإجراء الأساسي: بنفسجي غامق نهاري (7.3:1) / عنبري ليلي (10:1) */
+.hb-section .hb-btn-orange { background: var(--hb-cta-bg); color: var(--hb-cta-c); box-shadow: var(--hb-cta-sh); }
+.hb-section .hb-btn-orange:hover { background: var(--hb-cta-bg); color: var(--hb-cta-c); box-shadow: var(--hb-cta-hsh); filter: brightness(1.06); transform: translateY(-3px); }
+/* لمسات العنبري: نقطة الـ eyebrow + شرطة الشعار */
+.hb-section .hb-h-suffix::before { background: radial-gradient(circle at 35% 35%, #FFFFFF, var(--hb-spark) 60%, #F59E0B); box-shadow: 0 0 12px rgba(255,182,39,.75); }
+.hb-section .hb-tagline::before { width: 32px; height: 3px; background: var(--hb-spark); opacity: 1; }
+/* الصورة: الـ mask كان بيقص الـ drop-shadow عند حدود الصورة (حواف مستطيلة). الحل: مساحة شفافة حوالين الصورة داخل صندوق الـ mask */
+.hb-section .hb-img { box-sizing: content-box; width: 100%; max-width: 100%; padding: 10% 14% 0; margin: -10% -14% 0; pointer-events: none;
+  -webkit-mask-image: linear-gradient(#000 88%, transparent 100%); mask-image: linear-gradient(#000 88%, transparent 100%); }
+/* خط إضاءة (rim light): بنفسجي من ناحية وسيان من الناحية الأخرى */
+[data-theme="light"] .hb-section .hb-img { filter: drop-shadow(-4px 0 10px rgba(140,90,240,.30)) drop-shadow(4px 0 9px var(--hb-rim)) drop-shadow(0 24px 30px var(--hb-sh)); }
+[data-theme="dark"] .hb-section .hb-img { filter: drop-shadow(0 0 1px rgba(226,210,255,.9)) drop-shadow(-4px 0 12px rgba(150,100,255,.50)) drop-shadow(4px 0 9px var(--hb-rim)) drop-shadow(0 28px 36px var(--hb-sh)); }
+/* ديسكتوب: البنر بيتناسب مع ارتفاع الشاشة عشان الزراير تبان كاملة (1366×640 وأكبر) */
+@media (min-width: 1025px) {
+  .hb-section { min-height: min(760px, 100vh); min-height: min(760px, 100svh); padding-top: calc(var(--header-height, 76px) + 24px); padding-bottom: 48px; }
+  .hb-section .hb-img-frame { max-width: clamp(320px, calc((100vh - var(--header-height, 76px) - 64px) * .784), 540px); max-width: clamp(320px, calc((100svh - var(--header-height, 76px) - 64px) * .784), 540px); }
+  .hb-section .hb-heading { margin-bottom: 22px; }
+  .hb-section .hb-h-levels { margin-top: 10px; }
+  .hb-section .hb-tagline { margin-top: 14px; }
+  .hb-section .hb-btns { margin-top: 22px; }
+}
+/* موبايل وتابلت: الاسم ← الشعار ← الزراير ← الصورة مقصوصة عند الصدر وطالعة من أسفل البنر */
+@media (max-width: 1024px) {
+  .hb-section { padding-bottom: 0; }
+  .hb-section .hb-btns { order: 3; }
+  .hb-section .hb-img-side { order: 4; padding: 8px 0 0; }
+  .hb-section .hb-img { aspect-ratio: 784 / 800; object-fit: cover; object-position: center top;
+    -webkit-mask-image: linear-gradient(#000 92%, transparent 100%); mask-image: linear-gradient(#000 92%, transparent 100%); }
+}

@@ -89,12 +89,12 @@ window.Templates = (function () {
             <div class="hb-bg" aria-hidden="true">
                 <div class="hb-orb hb-orb-1"></div>
                 <div class="hb-orb hb-orb-2"></div>
-                <span class="hb-float hb-f1">F = ma</span>
-                <span class="hb-float hb-f2">E = mc²</span>
-                <span class="hb-float hb-f3">V = IR</span>
-                <span class="hb-float hb-f4">λ = v / f</span>
-                <span class="hb-float hb-f5">ΔE = hf</span>
-                <span class="hb-float hb-f6">∑F = 0</span>
+                <span class="hb-float hb-f1" dir="ltr">F = ma</span>
+                <span class="hb-float hb-f2" dir="ltr">E = mc²</span>
+                <span class="hb-float hb-f3" dir="ltr">V = IR</span>
+                <span class="hb-float hb-f4" dir="ltr">λ = v / f</span>
+                <span class="hb-float hb-f5" dir="ltr">ΔE = hf</span>
+                <span class="hb-float hb-f6" dir="ltr">∑F = 0</span>
             </div>
             <div class="hb-container">
                 <div class="hb-body">
